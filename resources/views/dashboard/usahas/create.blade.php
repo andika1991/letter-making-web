@@ -6,7 +6,7 @@
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Buat Surat Keterangan Usaha</h6>
-                    <form method="post" action="/dashboard/domisili">
+                    <form method="post" action="/dashboard/usaha">
                         @csrf
                         <div class="mb-3">
                             <label for="kodeSurat" class="form-label">Kode Surat</label>
@@ -38,7 +38,7 @@
                         <div class="mb-3">
                             <label for="nik" class="form-label">NIK</label>
                             <input type="number" class="form-control @error('nik') is-invalid @enderror" id="nik" name="nik" required value="{{ old('nik') }}">
-                            @error('nama')
+                            @error('nik')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -65,8 +65,45 @@
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Tulis alamat lengkap disini..."
-                                id="alamat" name="alamat" style="height: 150px;" required value="{{ old('alamat') }}"></textarea>
+                                id="alamat" name="alamat" style="height: 150px;" required>{{ old('alamat') }}</textarea>
                             @error('alamat')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="namaUsaha" class="form-label">Nama Usaha</label>
+                            <input type="text" class="form-control @error('namaUsaha') is-invalid @enderror" id="namaUsaha" name="namaUsaha" placeholder="Nama Usaha" required value="{{ old('namaUsaha') }}">
+                            @error('namaUsaha')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="jenisUsaha" class="form-label">Jenis Usaha</label>
+                            <input type="text" class="form-control @error('jenisUsaha') is-invalid @enderror" id="jenisUsaha" name="jenisUsaha" placeholder="Jenis Usaha" required value="{{ old('jenisUsaha') }}">
+                            @error('jenisUsaha')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="alamatUsaha" class="form-label">Alamat Usaha</label>
+                            <textarea class="form-control @error('alamatUsaha') is-invalid @enderror" placeholder="Tulis alamat usaha lengkap disini..."
+                                id="alamatUsaha" name="alamatUsaha" style="height: 150px;" required>{{ old('alamatUsaha') }}</textarea>
+                            @error('alamatUsaha')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="mulaiBerdiri" class="form-label">Mulai Berdiri</label>
+                            <input type="date" class="form-control @error('mulaiBerdiri') is-invalid @enderror" id="mulaiBerdiri" name="mulaiBerdiri" required value="{{ old('mulaiBerdiri') }}">
+                            @error('mulaiBerdiri')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -75,12 +112,13 @@
                         <div class="mb-3">
                             <label for="keterangan" class="form-label">Keterangan</label>
                             <input id="keterangan" type="hidden" name="keterangan">
-                            <trix-editor class="form-control @error('keterangan') is-invalid @enderror" input="keterangan" required value="{{ old('keterangan') }}"></trix-editor>
+                            <trix-editor class="form-control @error('keterangan') is-invalid @enderror" input="keterangan" required>{{ old('keterangan') }}</trix-editor>
                             @error('keterangan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
+                        </div>
                         <div class="mb-3 mt-3">
                             <label for="tglSurat" class="form-label">Tanggal</label>
                             <input type="date" class="form-control @error('tglSurat') is-invalid @enderror" id="tglSurat" name="tglSurat" required value="{{ old('tglSurat') }}">
@@ -115,5 +153,3 @@
         </div>
     </div>
 @endsection
-
-

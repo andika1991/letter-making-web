@@ -50,16 +50,21 @@ class DashboardUsaController extends Controller
             'tempatTglLahir' => 'required|max:255',
             'pekerjaan' => 'required|max:255',
             'alamat' => 'required|max:255',
+            'namaUsaha' => 'required|max:255',
+            'jenisUsaha' => 'required|max:255',
+            'alamatUsaha' => 'required|max:255',
+            'mulaiBerdiri' => 'required|date',
             'keterangan' => 'required|max:255',
             'tglSurat' => 'required|date',
             'ttd' => 'required|max:255',
             'namaTtd' => 'required|max:255',
         ]);
-
+    
         Usaha::create($validatedData);
-
+    
         return redirect('/dashboard/usaha')->with('success', 'Surat berhasil ditambahkan!');
     }
+    
 
     /**
      * Display the specified resource.
