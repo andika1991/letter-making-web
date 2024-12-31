@@ -14,15 +14,15 @@
     <center>
       <table width="450">
         <tr>
-          <td><img src="{{ asset('dashmin/img/logo_cetak.svg') }}" width="110" height="110" /></td>
+          <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" width="110" height="110" /></td>
           <td style="font-family: 'Times New Roman', Times, serif; font-size: 13px">
             <center>
-              <font size="5"><b>PEMERINTAH KOTA LHOKSEUMAWE</b> </font><br />
-              <font size="4"><b>KECAMATAN MUARA DUA</b></font
+              <font size="4"><b>PEMERINTAH KABUPATEN LAMPUNG TENGAH</b> </font><br />
+              <font size="4"><b>KECAMATAN SEPUTIH BANYAK</b></font
               ><br />
-              <font size="5"><b>GAMPONG PAYA PUNTEUET</b></font
-              ><br />
-              <font size="3"><i>JLN. Tgk, WAHAB DAHLAWI KM.1</i></font
+              <font size="4"><b>KAMPUNG SUMBER BAHAGIA</b></font
+              ><br /> <br><br>
+              <font size="2"><i>JLN. Tgk, WAHAB DAHLAWI KM.1</i></font
               ><br />
             </center>
           </td>
@@ -45,7 +45,7 @@
       <br /><br /><br />
       <table width="450">
         <tr>
-          <td>Keuchik Gampong Paya Punteuet Kecamatan Muara Dua Pemerintah Kota Lhokseumawe, dengan ini menerangkan bahwa :</td>
+          <td>Yang bertanda tangan di bawah ini, Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah menerangkan bahwa:</td>
         </tr>
       </table>
       <br /><br />
@@ -83,19 +83,18 @@
             {!! $domisili->keterangan !!}
           </td>
         </tr>
-        <br /><br />
       </table>
-      <br /><br />
+     <br>
       <table width="450">
         <tr>
           <td >Demikian surat keterangan ini kami perbuat untuk dapat dipergunakan seperlunya.</td>
         </tr>
       </table>
       <br /><br /><br /><br>
-      <table width="450">
+      <table width="500">
         <tr>
           <td width="300"></td>
-          <td style="text-align: left">Paya Punteuet, {{ date('d M Y', strtotime($domisili->tglSurat)); }}</td>
+          <td style="text-align: left">Sumber Bahagia, {{ date('d M Y', strtotime($domisili->tglSurat)); }}</td>
         </tr>
         <tr>
           <td width="300"></td>
@@ -103,7 +102,7 @@
         </tr>
       </table>
       <br /><br />
-      <table width="450" style="margin-bottom: 100px">
+      <table width="500" style="margin-bottom: 100px">
         <tr>
           <td width="300"></td>
           <td style="text-align: left">{{ $domisili->namaTtd }}</td>

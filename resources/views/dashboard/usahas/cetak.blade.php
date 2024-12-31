@@ -14,13 +14,13 @@
     <center>
       <table width="450">
         <tr>
-          <td><img src="{{ asset('dashmin/img/logo_cetak.svg') }}" width="110" height="110" /></td>
+          <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" width="110" height="110" /></td>
           <td style="font-family: 'Times New Roman', Times, serif; font-size: 13px">
             <center>
-              <font size="5"><b>PEMERINTAH KOTA LHOKSEUMAWE</b> </font><br />
-              <font size="4"><b>KECAMATAN MUARA DUA</b></font
+              <font size="5"><b>PEMERINTAH KABUPATEN LAMPUNG TENGAH</b> </font><br />
+              <font size="4"><b>KECAMATAN SEPUTIH BANYAK</b></font
               ><br />
-              <font size="5"><b>GAMPONG PAYA PUNTEUET</b></font
+              <font size="5"><b>KAMPUNG SUMBER BAHAGIA</b></font
               ><br />
               <font size="3"><i>JLN. Tgk, WAHAB DAHLAWI KM.1</i></font
               ><br />

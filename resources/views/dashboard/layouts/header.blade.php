@@ -21,7 +21,7 @@
                     <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right me-2"></i> Logout</button>
                 </form>
             </div>
-            <p>ef</p>
+            
         </div>
     </div>
 </nav>

@@ -7,8 +7,8 @@
                         &copy; <a href="http://surat-desa.test/">surat-desa.test</a>, All Right Reserved.
                     </div>
                     <div class="col-md-6 text-center text-md-end">
-                        Created By <a href="#">KKNT Kel 36</a> 2022 <a
-                            href=https://unimal.ac.id/">UNIMAL</a>
+                        Created By <a href="#">KKN MBKM</a> 2025 <a
+                            href=https://unila.ac.id/">UNILA</a>
                     </div>
                 </div>
             </div>
