@@ -7,6 +7,10 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardDomController;
 use App\Http\Controllers\DashboardUsaController;
+use App\Http\Controllers\VerivikasiController;
+
+Route::get('/surat/{hash}', [VerivikasiController::class, 'getSuratData']);
+
 
 
 /*
@@ -40,5 +44,6 @@ Route::get('/dashboard/domisili/{domisili:noSurat}/cetak', [DashboardDomControll
 Route::get('/dashboard/usaha/{usaha:noSurat}/cetak', [DashboardUsaController::class, 'cetak'])->middleware('auth');
 Route::resource('/dashboard/domisili', DashboardDomController::class)->middleware('auth');
 Route::resource('/dashboard/usaha', DashboardUsaController::class)->middleware('auth');
+
 
 // Route::get('/dashboard/domisili/cetak_pdf', [DashboardDomController::class, 'cetak_pdf'])->middleware('auth');

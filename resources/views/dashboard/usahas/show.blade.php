@@ -14,10 +14,10 @@
                     <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" width="110" height="110" /></td>
                     <td style="font-family: 'Times New Roman', Times, serif; font-size: 13px">
                         <center>
-                            <font size="5"><b>PEMERINTAH KABUPATEN PRINGSEWU</b></font><br />
-                            <font size="4"><b>KECAMATAN GADINGREJO</b></font><br />
-                            <font size="5"><b>DESA WONODADI</b></font><br />
-                            <font size="3"><i>Jl. Raya Desa Wonodadi No. 123, Kecamatan Gadingrejo, Kabupaten Pringsewu</i></font><br />
+                            <font size="5"><b>PEMERINTAH KABUPATEN LAMPUNG TENGAH</b></font><br />
+                            <font size="4"><b>KECAMATAN SEPUTIH BANYAK</b></font><br />
+                            <font size="5"><b>KAMPUNG SUMBER BAHAGIA</b></font><br />
+                            <font size="3"><i>Jl. Raya Desa  No. 123</i></font><br />
                             <font size="3"><i>Kode Pos: 35372</i></font><br />
                         </center>
                     </td>
@@ -40,7 +40,7 @@
             <br /><br /><br />
             <table width="545">
                 <tr>
-                    <td>Yang bertanda tangan di bawah ini, Kepala Desa Wonodadi, Kecamatan Gadingrejo, Kabupaten Pringsewu, menerangkan bahwa:</td>
+                    <td>Yang bertanda tangan di bawah ini,Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah,menerangkan bahwa:</td>
                 </tr>
             </table>
             <br /><br />
@@ -54,16 +54,6 @@
                     <td width="200">Tempat/Tgl Lahir</td>
                     <td width="10">:</td>
                     <td width="335">{{ $usaha->tempatTglLahir }}</td>
-                </tr>
-                <tr>
-                    <td width="200">Jenis Kelamin</td>
-                    <td width="10">:</td>
-                    <td width="335">{{ $usaha->jenisKelamin }}</td>
-                </tr>
-                <tr>
-                    <td width="200">Agama</td>
-                    <td width="10">:</td>
-                    <td width="335">{{ $usaha->agama }}</td>
                 </tr>
                 <tr>
                     <td width="200">Pekerjaan</td>
@@ -108,9 +98,11 @@
             <br /><br />
             <table width="545">
                 <tr>
-                    <td>
-                        Usaha ini masih aktif berjalan hingga saat ini. Surat keterangan ini dibuat atas permintaan yang bersangkutan untuk keperluan [contoh: pengajuan pinjaman, pendaftaran NPWP, atau keperluan lain].
+                    <td >
+                        Usaha ini masih aktif berjalan hingga saat ini. Surat keterangan ini dibuat atas permintaan yang bersangkutan untuk keperluan {{ strip_tags($usaha->keterangan) }}
+                        .
                     </td>
+                    
                 </tr>
             </table>
             <br /><br />
@@ -130,13 +122,19 @@
                     <td style="text-align: left">Kepala Desa Wonodadi</td>
                 </tr>
             </table>
-            <br /><br />
+           
+            <br />
             <table width="545" style="margin-bottom: 100px">
                 <tr>
-                    <td width="340"></td>
-                    <td style="text-align: left">{{ $usaha->namaTtd }}</td>
+                    <td width="340" style="text-align: right;margin-top:40px;">
+                        <img src="{{ asset($usaha->qrcode) }}" width="80" height="80" style="margin-bottom:120px;margin-right:-80px;"/>
+                    </td>
+                    <td style="text-align: left; vertical-align: middle;">
+                        {{ $usaha->namaTtd }}
+                    </td>
                 </tr>
             </table>
+            
         </center>
     </div>
 </div>

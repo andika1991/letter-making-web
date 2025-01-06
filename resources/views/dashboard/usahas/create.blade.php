@@ -6,7 +6,7 @@
             <div class="col-sm-12 col-xl-6">
                 <div class="bg-light rounded h-100 p-4">
                     <h6 class="mb-4">Buat Surat Keterangan Usaha</h6>
-                    <form method="post" action="/dashboard/usaha">
+                    <form method="post" action="/dashboard/usaha" enctype="multipart/form-data">
                         @csrf
                         <div class="mb-3">
                             <label for="kodeSurat" class="form-label">Kode Surat</label>
@@ -146,6 +146,17 @@
                                 </div>
                             @enderror
                         </div>
+
+                        <div class="mb-3">
+                            <label for="ttdscan" class="form-label">Upload Tanda Tangan</label>
+                            <input type="file" class="form-control @error('ttdscan') is-invalid @enderror" id="ttdscan" name="ttdscan" accept="image/*" required>
+                            @error('ttdscan')
+                                <div class="invalid-feedback">
+                                    {{ $message }}
+                                </div>
+                            @enderror
+                        </div>
+                        
                         <button type="submit" class="btn btn-primary">Buat Surat</button>
                     </form>
                 </div>
