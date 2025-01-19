@@ -22,8 +22,6 @@
         .btn-success:hover {
             background-color: #218838;
         }
-
-        /* Styling weher */
         .weher {
             padding: 20px;
             border-radius: 10px;
@@ -65,7 +63,7 @@
                     Lihat Dokumen
                 </a>
             </div>
-        @elseif ($data->kodeSurat == '410')
+        @elseif ($data->kodeSurat == '470')
             <!-- Weher untuk Domisili -->
             <div class="weher weher-domisili">
                 <h2>Surat Domisili Ditemukan</h2>

@@ -8,7 +8,18 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardDomController;
 use App\Http\Controllers\DashboardUsaController;
 use App\Http\Controllers\VerivikasiController;
-
+use App\Http\Controllers\sktmControlller;
+use App\Http\Controllers\SkkController;
+use App\Http\Controllers\PikController;
+use App\Http\Controllers\SpphController;
+Route::get('/dashboard/SPPH/{id}/cetak', [SpphController::class, 'cetak'])->name('spph.cetak');
+Route::resource('/dashboard/SPPH', SpphController::class);
+Route::get('/dashboard/permohonankeramaian/{id}/cetak', [PikController::class, 'cetak'])->name('pik.cetak');
+Route::resource('/dashboard/permohonankeramaian', PikController::class);
+Route::resource('/dashboard/kematian', SkkController::class);
+Route::get('/dashboard/kematian/{id}/cetak', [SkkController::class, 'cetak'])->name('skk.cetak');
+Route::resource('/dashboard/sktm', sktmControlller::class);
+Route::get('/dashboard/sktm/{id}/cetak', [sktmControlller::class, 'cetak'])->name('sktm.cetak');
 Route::get('/surat/{hash}', [VerivikasiController::class, 'getSuratData']);
 
 

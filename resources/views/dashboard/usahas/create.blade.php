@@ -10,13 +10,20 @@
                         @csrf
                         <div class="mb-3">
                             <label for="kodeSurat" class="form-label">Kode Surat</label>
-                            <input type="number" class="form-control @error('kodeSurat') is-invalid @enderror" id="kodeSurat" name="kodeSurat" placeholder="Ketik 510 untuk ket Usaha" required autofocus value="{{ old('kodeSurat') }}">
+                            <input type="text" 
+                                   class="form-control @error('kodeSurat') is-invalid @enderror" 
+                                   id="kodeSurat" 
+                                   name="kodeSurat" 
+                                   placeholder="Ketik 510 untuk ket Usaha" 
+                                   value="147.2" 
+                                   readonly>
                             @error('kodeSurat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="mb-3">
                             <label for="noSurat" class="form-label">Nomor Surat</label>
                             <input type="number" class="form-control @error('noSurat') is-invalid @enderror" id="noSurat" name="noSurat" placeholder="Urutan Nomor Surat Terbaru" required value="{{ old('noSurat') }}">
@@ -62,6 +69,17 @@
                                 </div>
                             @enderror
                         </div>
+
+                        <!-- Gender Field (Select Dropdown) -->
+                        <div class="form-group">
+                            <label for="jenisKelamin">Jenis Kelamin</label><br>
+                            <input type="radio" id="laki-laki" name="jenisKelamin" value="Laki-laki" {{ old('jenisKelamin') == 'Laki-laki' ? 'checked' : '' }} required>
+                            <label for="laki-laki">Laki-laki</label>
+                            
+                            <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan" {{ old('jenisKelamin') == 'Perempuan' ? 'checked' : '' }} required>
+                            <label for="perempuan">Perempuan</label>
+                        </div>
+
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
                             <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Tulis alamat lengkap disini..."
@@ -101,7 +119,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="mulaiBerdiri" class="form-label">Mulai Berdiri</label>
+                            <label for="mulaiBerdiri" class="form-label">Mulai Berdiri usaha</label>
                             <input type="date" class="form-control @error('mulaiBerdiri') is-invalid @enderror" id="mulaiBerdiri" name="mulaiBerdiri" required value="{{ old('mulaiBerdiri') }}">
                             @error('mulaiBerdiri')
                                 <div class="invalid-feedback">
@@ -110,7 +128,7 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="keterangan" class="form-label">Keterangan</label>
+                            <label for="keterangan" class="form-label">Surat dipergunakan untuk</label>
                             <input id="keterangan" type="hidden" name="keterangan">
                             <trix-editor class="form-control @error('keterangan') is-invalid @enderror" input="keterangan" required>{{ old('keterangan') }}</trix-editor>
                             @error('keterangan')
@@ -129,33 +147,36 @@
                             @enderror
                         </div>
                         <div class="mb-3">
-                            <label for="ttd" class="form-label">Yang Menandatangai</label>
-                            <input type="text" class="form-control @error('ttd') is-invalid @enderror" id="ttd" name="ttd" placeholder="Keuchik/Sekdes" required value="{{ old('ttd') }}">
+                            <label for="ttd" class="form-label">Yang Menandatangani</label>
+                            <select class="form-control @error('ttd') is-invalid @enderror" id="ttd" name="ttd" required>
+                                <option value="" disabled selected>Pilih</option>
+                                <option value="Kepala Kampung" {{ old('ttd') == 'Kepala Kampung' ? 'selected' : '' }}>Kepala Kampung</option>
+                                <option value="Sekretaris Kampung" {{ old('ttd') == 'Sekretaris Kampung' ? 'selected' : '' }}>Sekretaris Kampung</option>
+                            </select>
                             @error('ttd')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="mb-3">
-                            <label for="namaTtd" class="form-label">Nama Yang Menandatangai</label>
-                            <input type="text" class="form-control @error('namaTtd') is-invalid @enderror" id="namaTtd" name="namaTtd" required value="{{ old('namaTtd') }}">
+                            <label for="namaTtd" class="form-label">Nama Yang Menandatangani</label>
+                            <input type="text" 
+                                   class="form-control @error('namaTtd') is-invalid @enderror" 
+                                   id="namaTtd" 
+                                   name="namaTtd" 
+                                   required 
+                                   value="{{ old('namaTtd', 'Setiohudi') }}">
                             @error('namaTtd')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
 
-                        <div class="mb-3">
-                            <label for="ttdscan" class="form-label">Upload Tanda Tangan</label>
-                            <input type="file" class="form-control @error('ttdscan') is-invalid @enderror" id="ttdscan" name="ttdscan" accept="image/*" required>
-                            @error('ttdscan')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                        </div>
+
                         
                         <button type="submit" class="btn btn-primary">Buat Surat</button>
                     </form>

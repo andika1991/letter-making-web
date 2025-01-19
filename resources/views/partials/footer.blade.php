@@ -8,7 +8,7 @@
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         Created By <a href="#">KKN MBKM</a> 2025 <a
-                            href=https://unila.ac.id/">UNILA</a>
+                            href=https://unilaf.ac.id/">UNILA</a>
                     </div>
                 </div>
             </div>

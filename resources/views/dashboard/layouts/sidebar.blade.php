@@ -21,6 +21,10 @@
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="/dashboard/domisili" class="dropdown-item {{ Request::is('dashboard/domisili*') ? 'active' : '' }}"><i class="bi bi-house"></i>  Ket Domisili</a>
                             <a href="/dashboard/usaha" class="dropdown-item {{ Request::is('dashboard/usaha*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Usaha</a>
+                            <a href="/dashboard/sktm" class="dropdown-item {{ Request::is('dashboard/sktm*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SKTM</a>
+                            <a href="/dashboard/kematian" class="dropdown-item {{ Request::is('dashboard/skk*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SKK</a>
+                            <a href="/dashboard/permohonankeramaian" class="dropdown-item {{ Request::is('dashboard/permohonankeramaian*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket PIK</a>
+                            <a href="/dashboard/SPPH" class="dropdown-item {{ Request::is('dashboard/SPPH*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SPPH</a>
                         </div>
                     </div>
                 </div>

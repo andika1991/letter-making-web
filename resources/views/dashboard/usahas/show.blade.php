@@ -115,7 +115,7 @@
             <table width="545">
                 <tr>
                     <td width="340"></td>
-                    <td style="text-align: left">Wonodadi, {{ date('d M Y', strtotime($usaha->tglSurat)) }}</td>
+                    <td style="text-align: left">Sumber Bahagia, {{ date('d M Y', strtotime($usaha->tglSurat)) }}</td>
                 </tr>
                 <tr>
                     <td width="340"></td>
@@ -126,9 +126,7 @@
             <br />
             <table width="545" style="margin-bottom: 100px">
                 <tr>
-                    <td width="340" style="text-align: right;margin-top:40px;">
-                        <img src="{{ asset($usaha->qrcode) }}" width="80" height="80" style="margin-bottom:120px;margin-right:-80px;"/>
-                    </td>
+             
                     <td style="text-align: left; vertical-align: middle;">
                         {{ $usaha->namaTtd }}
                     </td>

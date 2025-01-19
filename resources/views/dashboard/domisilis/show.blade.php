@@ -103,6 +103,7 @@
                         <br /><br />
                         <table width="570" style="margin-bottom: 100px">
                             <tr>
+                           
                                 <td width="340"></td>
                                 <td style="text-align: left">{{ $domisili->namaTtd }}</td>
                             </tr>

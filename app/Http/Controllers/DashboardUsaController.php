@@ -44,75 +44,53 @@ class DashboardUsaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        // Validasi input
-        $validatedData = $request->validate([
-            'kodeSurat' => 'required|numeric',
-            'noSurat' => 'required|numeric',
-            'nama' => 'required|max:255',
-            'nik' => 'required|numeric',
-            'tempatTglLahir' => 'required|max:255',
-            'pekerjaan' => 'required|max:255',
-            'alamat' => 'required|max:255',
-            'namaUsaha' => 'required|max:255',
-            'jenisUsaha' => 'required|max:255',
-            'alamatUsaha' => 'required|max:255',
-            'mulaiBerdiri' => 'required|date',
-            'keterangan' => 'required|max:255',
-            'tglSurat' => 'required|date',
-            'ttd' => 'required|max:255',
-            'ttdscan' => 'required', // Validasi untuk file gambar
-            'namaTtd' => 'required|max:255',
-        ]);
-    
-        // Simpan file ttdscan ke storage/public/ttdscan
-        if ($request->hasFile('ttdscan')) {
-            $file = $request->file('ttdscan');
-            $filePath = $file->store('ttdscan', 'public'); // Menyimpan ke disk 'public'
-            $validatedData['ttdscan'] = $filePath; // Menyimpan path file ke database
-        }
-    
-        // Membuat hash unik untuk QR Code
-        $kodeSurat = $validatedData['kodeSurat'];
-        $noSurat = $validatedData['noSurat'];
-        $tahun = date('Y');
-    
-        // Gabungkan data untuk hashing
-        $hashString = $kodeSurat . $noSurat . $tahun . now();
-        $uniqueHash = hash('sha256', $hashString); // Hash menggunakan SHA-256
-    
-        // Simpan hash ke dalam data yang akan disimpan
-        $validatedData['hash'] = $uniqueHash;
-    
-        // Buat URL lengkap untuk QR Code (misalnya: namaweb/surat/{hash})
-        $url = url("/surat/{$uniqueHash}");
-    
-        // Generate QR Code dengan URL lengkap
-        $qrCodePath = "qrcodes/{$uniqueHash}.png";
-    
-        // Pastikan folder public/qrcodes ada
-        if (!file_exists(public_path('qrcodes'))) {
-            mkdir(public_path('qrcodes'), 0755, true);
-        }
-    
-        $options = new QROptions([
-            'outputType' => QRCode::OUTPUT_IMAGE_PNG,
-            'eccLevel' => QRCode::ECC_L,
-            'imageBase64' => false,
-        ]);
-    
-        $qrcode = new QRCode($options);
-        $qrcode->render($url, public_path($qrCodePath));
-    
-        // Tambahkan path QR Code ke data yang akan disimpan
-        $validatedData['qrcode'] = $qrCodePath;
-    
-        // Simpan data ke database
-        Usaha::create($validatedData);
-    
-        return redirect('/dashboard/usaha')->with('success', 'Surat berhasil ditambahkan!');
-    }
-    
+{
+    // Validasi input
+    $validatedData = $request->validate([
+        'kodeSurat' => 'required|numeric',
+        'noSurat' => 'required|numeric',
+        'nama' => 'required|max:255',
+        'nik' => 'required|numeric',
+        'tempatTglLahir' => 'required|max:255',
+        'pekerjaan' => 'required|max:255',
+        'alamat' => 'required|max:255',
+        'namaUsaha' => 'required|max:255',
+        'jenisUsaha' => 'required|max:255',
+        'alamatUsaha' => 'required|max:255',
+        'mulaiBerdiri' => 'required|date',
+        'keterangan' => 'required|string', // Adjust validation to handle rich text
+        'tglSurat' => 'required|date',
+        'ttd' => 'required|max:255',
+        'namaTtd' => 'required|max:255',
+        'jenisKelamin' => 'required|in:Laki-laki,Perempuan', // Add validation for gender
+    ]);
+
+    // Sanitizing and storing the 'keterangan' field to avoid XSS
+    $keterangan = strip_tags($validatedData['keterangan']); // Remove HTML tags
+
+    // Simpan data ke database tanpa QR code dan ttdscan
+    Usaha::create([
+        'kodeSurat' => $validatedData['kodeSurat'],
+        'noSurat' => $validatedData['noSurat'],
+        'nama' => $validatedData['nama'],
+        'nik' => $validatedData['nik'],
+        'tempatTglLahir' => $validatedData['tempatTglLahir'],
+        'pekerjaan' => $validatedData['pekerjaan'],
+        'alamat' => $validatedData['alamat'],
+        'namaUsaha' => $validatedData['namaUsaha'],
+        'jenisUsaha' => $validatedData['jenisUsaha'],
+        'alamatUsaha' => $validatedData['alamatUsaha'],
+        'mulaiBerdiri' => $validatedData['mulaiBerdiri'],
+        'keterangan' => $keterangan, // Store sanitized 'keterangan'
+        'tglSurat' => $validatedData['tglSurat'],
+        'ttd' => $validatedData['ttd'],
+        'namaTtd' => $validatedData['namaTtd'],
+        'jeniskelamin' => $validatedData['jenisKelamin'], // Store gender
+    ]);
+
+    return redirect('/dashboard/usaha')->with('success', 'Surat usaha dengan nomor ' . $validatedData['noSurat'] . ' berhasil ditambahkan!');
+}
+
     
 
     /**

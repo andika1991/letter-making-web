@@ -1,12 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Str;
 use App\Models\Domisili;
 use Illuminate\Http\Request;
 use PDF;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use Illuminate\Support\Facades\Storage;
 
+use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use chillerlan\QRCode\QRCode;
+use chillerlan\QRCode\QROptions;
 class DashboardDomController extends Controller
 {
     /**
@@ -41,27 +44,38 @@ class DashboardDomController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'kodeSurat' => 'required|numeric',
-            'noSurat' => 'required|numeric',
-            'nama' => 'required|max:255',
-            'nik' => 'required|numeric',
-            'tempatTglLahir' => 'required|max:255',
-            'pekerjaan' => 'required|max:255',
-            'alamat' => 'required',
-            'keterangan' => 'required',
-            'tglSurat' => 'required|date',
-            'ttd' => 'required|max:255',
-            'namaTtd' => 'required|max:255',
-        ]);
-
-        Domisili::create($validatedData);
-
-        return redirect('/dashboard/domisili')->with('success', 'Surat berhasil ditambahkan!');
-    }
-
+  
+    
+     public function store(Request $request)
+     {
+         // Validasi input
+         $validatedData = $request->validate([
+             'kodeSurat' => 'required|numeric',
+             'noSurat' => 'required|numeric',
+             'nama' => 'required|max:255',
+             'nik' => 'required|numeric',
+             'tempatTglLahir' => 'required|max:255',
+             'pekerjaan' => 'required|max:255',
+             'alamat' => 'required|max:255',
+             'alamatKK' => 'required|max:255', // Validasi alamat KK
+             'keterangan' => 'required|max:255',
+             'tglSurat' => 'required|date',
+             'ttd' => 'required|max:255',
+             'namaTtd' => 'required|max:255',
+             'jenisKelamin' => 'required|in:Laki-Laki,Perempuan', // Validasi jenisKelamin
+             'agama' => 'required|in:Islam,Kristen,Katolik,Hindu,Buddha,Konghucu', // Validasi agama
+         ]);
+     
+         try {
+             // Simpan data surat domisili ke database
+             Domisili::create($validatedData);
+     
+             return redirect('/dashboard/domisili')->with('success', 'Surat domisili berhasil ditambahkan!');
+         } catch (\Exception $e) {
+             return back()->withErrors(['error' => 'Terjadi kesalahan saat menyimpan data.'])->withInput();
+         }
+     }
+     
     /**
      * Display the specified resource.
      *
@@ -98,31 +112,35 @@ class DashboardDomController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Domisili $domisili)
-    {
-        $rules = [
-            'kodeSurat' => 'required|numeric',
-            'nama' => 'required|max:255',
-            'nik' => 'required|numeric',
-            'tempatTglLahir' => 'required|max:255',
-            'pekerjaan' => 'required|max:255',
-            'alamat' => 'required|max:255',
-            'keterangan' => 'required|max:255',
-            'tglSurat' => 'required|date',
-            'ttd' => 'required|max:255',
-            'namaTtd' => 'required|max:255',
-        ];
+{
+    // Definisikan aturan validasi
+    $rules = [
+        'kodeSurat' => 'required|numeric',
+        'nama' => 'required|string|max:255',
+        'nik' => 'required|numeric|digits:16', // Pastikan NIK memiliki 16 digit
+        'tempatTglLahir' => 'required|string|max:255',
+        'pekerjaan' => 'required|string|max:255',
+        'alamat' => 'required|string|max:255',
+        'keterangan' => 'required|string|max:255',
+        'tglSurat' => 'required|date',
+        'ttd' => 'required|string|max:255',
+        'namaTtd' => 'required|string|max:255',
+    ];
 
-        if ($request->noSurat != $domisili->noSurat) {
-            $rules['noSurat'] = 'required|numeric|unique:domisilis';
-        }
-
-        $validatedData = $request->validate($rules);
-
-        Domisili::where('id', $domisili->id)
-            ->update($validatedData);
-
-        return redirect('/dashboard/domisili')->with('success', 'Surat berhasil di edit!');
+    // Validasi unik untuk noSurat hanya jika berbeda dari data lama
+    if ($request->noSurat != $domisili->noSurat) {
+        $rules['noSurat'] = 'required|numeric|unique:domisilis,noSurat';
     }
+
+    // Validasi data sesuai aturan
+    $validatedData = $request->validate($rules);
+
+    // Perbarui data pada model Domisili
+    $domisili->update($validatedData);
+
+    // Redirect dengan pesan sukses
+    return redirect()->route('domisili.index')->with('success', 'Surat berhasil diedit!');
+}
 
     /**
      * Remove the specified resource from storage.

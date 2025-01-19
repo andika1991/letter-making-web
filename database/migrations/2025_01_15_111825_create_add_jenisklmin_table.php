@@ -14,7 +14,8 @@ return new class extends Migration
     public function up()
     {
         Schema::table('usahas', function (Blueprint $table) {
-            $table->string('hash', 64)->nullable(); // Tambahkan kolom hash unik dengan nullable
+            $table->string('jeniskelamin')->nullable();
+       
         });
     }
 
@@ -26,7 +27,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('usahas', function (Blueprint $table) {
-            $table->dropColumn('hash'); // Hapus kolom jika rollback
+            $table->dropColumn(['jeniskelamin']);
         });
     }
 };
