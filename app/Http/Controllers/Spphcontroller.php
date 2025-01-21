@@ -59,12 +59,19 @@ class Spphcontroller extends Controller
     
        
         $pdf = PDF::loadView('dashboard.spph.cetak', [
-            'title' => 'Cetak SKK',
-            'skk' => $spph,
+            'title' => 'Cetak SPPH',
+            'spph' => $spph,
         ])->setPaper('a4', 'portrait'); // Paper orientation
     
         // Return the PDF
         return $pdf->stream('Spph_' . $spph->nama . '.pdf');
     }
-    
+    public function destroy($id)
+    {
+        $spph = Spph::findOrFail($id);
+        $spph->delete();
+
+        return redirect('/dashboard/SPPH')->with('success', 'Data SPPH berhasil dihapus.');
+    }
+
 }

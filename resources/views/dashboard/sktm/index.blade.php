@@ -43,7 +43,7 @@
                 <tbody>
                     @foreach ($sktms as $sktm)
                     <tr>
-                        <td>{{ $sktm->nomor_surat }}</td>
+                        <td>{{ $sktm->nosurat }}</td>
                         <td>{{ $sktm->nama }}</td>
                         <td>{{ date('d M Y', strtotime($sktm->created_at)) }}</td>
                         <td>

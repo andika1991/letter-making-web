@@ -42,44 +42,45 @@
     <p>Yang bertanda tangan di bawah ini :</p>
     <table class="content-table">
         <tr>
-            <td style="width: 25%;">Nama</td>
-            <td>: SETIO HUDI</td>
+            <td style="width: 25%; padding-left:60px;">Nama</td>
+            <td>: {{$spph->nama}}</td>
         </tr>
         <tr>
-            <td>Umur</td>
-            <td>: 45 Tahun</td>
+            <td style="padding-left:60px;">Umur</td>
+            <td>:{{$spph->umur}} Tahun</td>
         </tr>
         <tr>
-            <td>Pekerjaan</td>
-            <td>: Wiraswasta</td>
+            <td style="padding-left:60px;">Pekerjaan</td>
+            <td>: {{$spph->pekerjaan}}</td>
         </tr>
         <tr>
-            <td>Hiburan</td>
-            <td>: Andika Musik</td>
+            <td style="padding-left:60px;">Hiburan</td>
+            <td>: {{$spph->hiburan}}</td>
         </tr>
         <tr>
-            <td>Alamat</td>
-            <td>: Dusun V Rt. 017 Rw. 004 Kelurahan Sumber Bahagia, Kec. Seputih Banyak</td>
+            <td style="padding-left:60px;">Alamat</td>
+            <td>: {{$spph->alamat}}</td>
         </tr>
         <tr>
-            <td>No HP</td>
-            <td>: 0852-7926-2617</td>
+            <td style="padding-left:60px;">No HP</td>
+            <td>: {{$spph->nohp}}</td>
         </tr>
     </table>
 
     <p>Sehubungan dengan permohonan tentang izin keramaian Dalam Rangka kegiatan Hiburan yang akan dilaksanakan pada:</p>
     <table class="content-table">
         <tr>
-            <td style="width: 25%;">Hari / Tanggal</td>
-            <td>: Senin, 06 Januari 2025</td>
+            <td style="width: 25%;padding-left:60px;">Hari / Tanggal</td>
+            <td>: {{ Carbon\Carbon::parse($spph->haritgl)->translatedFormat('l, d F Y') }}
+            </td>
         </tr>
         <tr>
-            <td>Waktu</td>
-            <td>: 09.00 s/d 21.00 WIB</td>
+            <td style="padding-left:60px;">Waktu</td>
+            <td>: 09.00-22.00 WIB</td>
         </tr>
         <tr>
-            <td>Tempat</td>
-            <td>: Dusun II, RT. 010 RW. 004 Desa/Kelurahan Sumber Bahagia, Kecamatan Seputih Banyak Kabupaten Lampung Tengah</td>
+            <td style="padding-left:60px;">Tempat</td>
+            <td>: {{$spph->tempat}}</td>
         </tr>
     </table>
 

@@ -40,7 +40,7 @@ class SktmControlller extends Controller
     {
         // Validasi data input
         $validated = $request->validate([
-            'nosurat'=>'required',
+            'nosurat'=>'required|numeric',
             'nama' => 'required|string|max:255',
             'jeniskelamin' => 'required|string',
             'tempattgllahir' => 'required|string',
@@ -56,7 +56,7 @@ class SktmControlller extends Controller
         SuratTidakMampu::create($validated);
 
         // Redirect ke halaman SKTM dengan pesan sukses
-        return redirect()->route('sktm.index')->with('success', 'Data SKTM berhasil disimpan.');
+        return redirect('dashboard/sktm')->with('success', 'Data SKTM berhasil disimpan.');
     }
 
     /**

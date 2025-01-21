@@ -74,5 +74,12 @@ class Pikcontroller extends Controller
         return $pdf->stream('PIK_' . $pik->nosurat . '.pdf');
     }
     
+    public function destroy($id)
+    {
+        $pik = Pik::findOrFail($id);
+        $pik->delete();
+
+        return redirect('/dashboard/permohonankeramaian')->with('success', 'Data SPPH berhasil dihapus.');
+    }
    
 }

@@ -105,7 +105,7 @@
     
     try {
         $dateObject = new \DateTime($tanggal);
-        echo $dateObject->format('d-m-Y'); // Output: 18-01-2025
+
     } catch (\Exception $e) {
         echo "Terjadi kesalahan: " . $e->getMessage();
     }
@@ -180,7 +180,7 @@ function formatTanggalIndonesia($tanggal) {
 }
 
 $tanggalac = $pik->tanggalac; // Contoh: "2025-01-18"
-echo formatTanggalIndonesia($tanggalac);
+
 ?>
             <td style="padding-left:60px;">Tanggal</td>
             <td>: {{ \Carbon\Carbon::parse($pik->tanggalac)->locale('id')->translatedFormat('d-F-Y') }}

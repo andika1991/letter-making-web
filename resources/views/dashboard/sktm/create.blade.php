@@ -7,7 +7,7 @@
             <div class="bg-light rounded p-4">
                 <h3 class="mb-4">Tambah Data SKTM</h3>
 
-                <form action="{{ route('kematian.store') }}" method="POST">
+                <form action="{{ route('sktm.store') }}" method="POST">
                     @csrf
 
                     <div class="mb-3">

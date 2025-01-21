@@ -22,6 +22,15 @@
                     </div>
                 </div>
             </div>
+            <div class="col-sm-6 col-xl-5">
+                <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
+                    <div class="ms-3">
+                        <p class="mb-2">Total Surat Keterangan Tidak Mampu</p>
+                        <h6 class="mb-0">{{ $totalSktm }}</h6>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- Sale & Revenue End -->
@@ -87,4 +96,33 @@
         </div>
     </div>
     <!-- Recent Sales End -->
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Daftar Surat Keterangan Tidak Mampu Terbaru</h6>
+                <a href="/dashboard/sktm">Lihat Semua</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">No Surat</th>
+                            <th scope="col">Nama Warga</th>
+                            <th scope="col">Tanggal Surat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($sktm as $sktms)
+                        <tr>
+                            <td>{{ $sktms->nosurat }}</td>
+                            <td>{{ $sktms->nama }}</td>
+                            <td>{{ date('d M Y', strtotime($sktms->created_at)); }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
