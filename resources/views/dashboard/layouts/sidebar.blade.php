@@ -27,6 +27,12 @@
                             <a href="/dashboard/SPPH" class="dropdown-item {{ Request::is('dashboard/SPPH*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SPPH</a>
                             <a href="/dashboard/hajat" class="dropdown-item {{ Request::is('dashboard/hajat*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Hajat</a>
                             <a href="/dashboard/jalansapi" class="dropdown-item {{ Request::is('dashboard/jalansapi*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Jalansapi</a>
+                            <a href="/dashboard/sksp" class="dropdown-item {{ Request::is('dashboard/sksp*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Pernikahan</a>
+                            <a href="/dashboard/skln" class="dropdown-item {{ Request::is('dashboard/skln*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket KeLuar Negeri</a>
+                            <a href="/dashboard/skbi" class="dropdown-item {{ Request::is('dashboard/skbi*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Beda Identitas</a>
+                            <a href="/dashboard/skps" class="dropdown-item {{ Request::is('dashboard/skps*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Penduduk Sementara</a>
+                            <a href="/dashboard/telahmenikah" class="dropdown-item {{ Request::is('dashboard/telahmenikah*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Telah menikah</a>
+                            <a href="/dashboard/izinsuami" class="dropdown-item {{ Request::is('dashboard/izinsuami*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket Izin Suami</a>
                         </div>
                     </div>
                 </div>
