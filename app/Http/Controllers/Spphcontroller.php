@@ -46,10 +46,8 @@ class Spphcontroller extends Controller
     public function create()
     {
         // Mengambil semua data SKTM dan menghitung total
-      
-
         return view('dashboard.spph.create', [
-            'title' => 'SPPH bUAT SURAT',
+            'title' => 'SPPH BUAT SURAT',
         ]);
     }
 

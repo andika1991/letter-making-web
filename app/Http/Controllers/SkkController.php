@@ -49,13 +49,13 @@ class SkkController extends Controller
             'lokasipemakaman' => 'required|string|max:255',
             'sebabkematian' => 'required|string|max:255',
         ]);
-    
+        
         // Menyimpan data setelah validasi
         
-            Kematian::create($validatedData);
-    
-            // Redirect ke halaman index setelah data berhasil disimpan
-            return redirect('dashboard/kematian')->with('success', 'Data Surat Kematian berhasil disimpan!');
+        Kematian::create($validatedData);
+
+        // Redirect ke halaman index setelah data berhasil disimpan
+        return redirect('dashboard/kematian')->with('success', 'Data Surat Kematian berhasil disimpan!');
       
     }
     public function cetak($id)
@@ -80,8 +80,4 @@ class SkkController extends Controller
 
         return redirect('/dashboard/kematian')->with('success', 'Data SKK berhasil dihapus.');
     }
-    
-
-    
-
 }

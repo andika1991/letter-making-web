@@ -25,6 +25,7 @@
                             <a href="/dashboard/kematian" class="dropdown-item {{ Request::is('dashboard/skk*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SKK</a>
                             <a href="/dashboard/permohonankeramaian" class="dropdown-item {{ Request::is('dashboard/permohonankeramaian*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket PIK</a>
                             <a href="/dashboard/SPPH" class="dropdown-item {{ Request::is('dashboard/SPPH*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Ket SPPH</a>
+                            <a href="/dashboard/suratIzinOrtu" class="dropdown-item {{ Request::is('dashboard/suratIzinOrtu*') ? 'active' : '' }}"><i class="bi bi-shop-window"></i>  Surat Izin Ortu</a>
                         </div>
                     </div>
                 </div>

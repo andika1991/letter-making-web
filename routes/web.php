@@ -12,6 +12,8 @@ use App\Http\Controllers\sktmControlller;
 use App\Http\Controllers\SkkController;
 use App\Http\Controllers\PikController;
 use App\Http\Controllers\SpphController;
+use App\Http\Controllers\SuratIzinOrangTuaController;
+
 Route::get('/dashboard/SPPH/{id}/cetak', [SpphController::class, 'cetak'])->name('spph.cetak');
 Route::resource('/dashboard/SPPH', SpphController::class);
 Route::get('/dashboard/permohonankeramaian/{id}/cetak', [PikController::class, 'cetak'])->name('pik.cetak');
@@ -20,6 +22,9 @@ Route::resource('/dashboard/kematian', SkkController::class);
 Route::get('/dashboard/kematian/{id}/cetak', [SkkController::class, 'cetak'])->name('skk.cetak');
 Route::resource('/dashboard/sktm', sktmControlller::class);
 Route::get('/dashboard/sktm/{id}/cetak', [sktmControlller::class, 'cetak'])->name('sktm.cetak');
+Route::resource('/dashboard/suratIzinOrtu', SuratIzinOrangTuaController::class);
+Route::get('/dashboard/suratIzinOrtu/{id}/cetak', [SuratIzinOrangTuaController::class, 'cetak'])->name('suratIzinOrtu.cetak');
+
 Route::get('/surat/{hash}', [VerivikasiController::class, 'getSuratData']);
 
 

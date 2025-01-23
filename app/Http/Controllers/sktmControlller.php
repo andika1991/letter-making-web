@@ -32,7 +32,7 @@ class SktmControlller extends Controller
       
 
         return view('dashboard.sktm.create', [
-            'title' => 'SKTM bUAT SURAT',
+            'title' => 'SKTM BUAT SURAT',
         ]);
     }
 
