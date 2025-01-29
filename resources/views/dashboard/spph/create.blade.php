@@ -43,7 +43,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="alamat" class="form-label">Alamat</label>
+                        <label for="alamat" class="form-label">Alamat tinggal</label>
                         <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
                         @error('alamat')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -65,17 +65,17 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
                     <div class="mb-3">
                         <label for="waktu" class="form-label">Waktu</label>
-                        <input type="text" class="form-control @error('waktu') is-invalid @enderror" id="waktu" name="waktu" value="{{ old('waktu') }}" required>
+                        <input type="text" class="form-control @error('waktu') is-invalid @enderror" id="waktu" name="waktu" value="{{ old('waktu') }}" placeholder="09.00 Sd 17.00" required>
                         @error('waktu')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    
 
                     <div class="mb-3">
-                        <label for="tempat" class="form-label">Tempat</label>
+                        <label for="tempat" class="form-label">Tempat Acara</label>
                         <input type="text" class="form-control @error('tempat') is-invalid @enderror" id="tempat" name="tempat" value="{{ old('tempat') }}" required>
                         @error('tempat')
                             <div class="invalid-feedback">{{ $message }}</div>

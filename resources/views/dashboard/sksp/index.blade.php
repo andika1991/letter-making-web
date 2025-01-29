@@ -47,8 +47,7 @@
                             <td>{{ $sksps->nama }}</td>
                             <td>{{ date('d M Y', strtotime($sksps->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/sksp/{{ $sksps->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/sksp/{{ $sksps->nosurat }}/edit">Edit</a>
+                              
                                 <form action="/dashboard/sksp/{{ $sksps->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

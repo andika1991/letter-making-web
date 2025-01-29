@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <title>Surat Keterangan Tidak Mampu</title>
+    <title>Surat Keterangan Telah Menikah</title>
     <style>
         body {
             margin: 0 auto;
             width: 600px;
             font-family: 'Cambria Math', 'Georgia';
-            font-size: 16px;
+            font-size: 15px;
         }
         table {
             width: 100%;
@@ -46,6 +46,7 @@
         .content-table td {
             vertical-align: top;
             padding: 2px 0;
+            padding-left: 30px;
         }
         .signature-table {
             margin-top: 20px;
@@ -69,12 +70,12 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+                <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
-                        <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
-                        <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                        <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                        <h3>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h3>
+                        <h3>KECAMATAN SEPUTIH BANYAK</h3>
+                        <h1>KAMPUNG SUMBER BAHAGIA</h1>
                         <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                         <p>Kode Pos: 34156</p>
                     </div>
@@ -93,7 +94,7 @@
             </tr>
             <tr>
                 <td style="text-align: center;" class="nomor-surat">
-                    Nomor: 140.2/273/Kp.01/XI/2024
+                    Nomor: 140.2/{{$telahmenikah->nosurat}}/Kp.01/XI/2024
                 </td>
             </tr>
         </table>
@@ -103,55 +104,55 @@
 
     <table class="content-table">
         <tr>
-            <td style="width: 20%;">SUAMI</td>
+            <td style="width: 20%;"><b>1.SUAMI</b></td>
             <td></td>
         </tr>
         <tr>
             <td>Nama</td>
-            <td>: IWAN PANAMI</td>
+            <td>: {{$telahmenikah->namasuami}}</td>
         </tr>
         <tr>
             <td>Tempat/Tgl Lahir</td>
-            <td>: Sumber Bahagia, 12-04-1983</td>
+            <td>: {{$telahmenikah->ttlsuami}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1802101204830003</td>
+            <td>: {{$telahmenikah->niksuami}}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td>: Laki-laki</td>
+            <td>: Laki-Laki</td>
         </tr>
         <tr>
             <td>Agama</td>
-            <td>: Islam</td>
+            <td>: {{$telahmenikah->agama}}</td>
         </tr>
         <tr>
             <td>Pekerjaan</td>
-            <td>: Wiraswasta</td>
+            <td>: {{$telahmenikah->pekerjaan}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun 01, RT. 002 RW. 001, Desa Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</td>
+            <td>: {{$telahmenikah->alamat}}</td>
         </tr>
     </table>
-
+<br>
     <table class="content-table">
         <tr>
-            <td style="width: 20%;">ISTRI</td>
+            <td style="width: 20%;"><b>2.ISTRI</b></td>
             <td></td>
         </tr>
         <tr>
             <td>Nama</td>
-            <td>: NUR A’IDA</td>
+            <td>: {{$telahmenikah->namaistri}}</td>
         </tr>
         <tr>
             <td>Tempat/Tgl Lahir</td>
-            <td>: Seputih Banyak, 02-11-1986</td>
+            <td>: {{$telahmenikah->ttlistri}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1802104211860005</td>
+            <td>: {{$telahmenikah->nikistri}}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
@@ -159,40 +160,40 @@
         </tr>
         <tr>
             <td>Agama</td>
-            <td>: Islam</td>
+            <td>: {{$telahmenikah->agamaistri}}</td>
         </tr>
         <tr>
             <td>Pekerjaan</td>
-            <td>: Mengurus Rumah Tangga</td>
+            <td>: {{$telahmenikah->pekerjaanistri}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun 01, RT. 002 RW. 001, Desa Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</td>
+            <td>: {{$telahmenikah->alamatistri}}</td>
         </tr>
     </table>
 
-    <p>Kedua nama di atas adalah benar pasangan suami istri yang menikah pada Tahun 2000 hingga sekarang.</p>
+    <p>Kedua nama di atas adalah benar pasangan suami istri yang menikah pada Tahun {{$telahmenikah->tahunmenikah}} hingga sekarang.</p>
 
     <p>Demikian surat keterangan ini kami buat untuk dapat dipergunakan sebagaimana mestinya.</p>
 
     <table class="signature-table">
         <tr>
-            <td style="text-align: left;">Sumber Bahagia, 12 November 2024</td>
+            <td style="text-align: right;">Sumber Bahagia, {{ \Carbon\Carbon::parse($telahmenikah->created_at)->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
-            <td style="text-align: left;">Yang Membuat Permohonan</td>
+            <td style="text-align: right;">Yang Membuat Permohonan</td>
         </tr>
         <tr>
-            <td style="padding-top: 50px; text-align: left;">NUR A’IDA</td>
+            <td style="padding-top: 50px; text-align: right; padding-right:40px;"><b><u>{{$telahmenikah->yangmembuatpernyataan}}</u></b></td>
         </tr>
         <tr>
-            <td style="text-align: right;">Mengetahui,</td>
+            <td style="text-align: left;padding-left: 110px;">Mengetahui,</td>
         </tr>
         <tr>
-            <td style="text-align: right; padding-top: 50px;">SETIO HUDI</td>
+            <td style="text-align: left; padding-left: 50px;">Kepala Kampung Sumber Bahagia</td>
         </tr>
         <tr>
-            <td style="text-align: right;">Kepala Kampung Sumber Bahagia</td>
+            <td style="text-align: left;padding-top: 50px;padding-left: 110px;">SETIO HUDI</td>
         </tr>
     </table>
 </body>

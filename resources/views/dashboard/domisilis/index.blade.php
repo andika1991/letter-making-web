@@ -47,8 +47,7 @@
                             <td>{{ $domisili->nama }}</td>
                             <td>{{ date('d M Y', strtotime($domisili->tglSurat)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/domisili/{{ $domisili->noSurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/domisili/{{ $domisili->noSurat }}/edit">Edit</a>
+                               
                                 <form action="/dashboard/domisili/{{ $domisili->noSurat }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

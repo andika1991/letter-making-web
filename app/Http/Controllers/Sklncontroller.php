@@ -36,7 +36,7 @@ class Sklncontroller extends Controller
         'nosurat' => 'required|string|max:255|unique:skln,nosurat', // No Surat harus unik
         'nama' => 'required|string|max:255',
         'nik' => 'required|string|size:16', // Validasi panjang NIK harus 16 karakter
-        'ttl' => 'required|date', // Tanggal Lahir
+        'ttl' => 'required', // Tanggal Lahir
         'jeniskelam' => 'required', // Jenis Kelamin harus salah satu dari L atau P
         'alamat' => 'required|string|max:500', // Alamat maksimal 500 karakter
         'kondisi' => 'required|string|max:255',
@@ -65,5 +65,12 @@ public function cetak($id)
     return $pdf->stream('SKLN_' . $skln->nosurat . '.pdf');
 }
 
+public function destroy($id)
+{
+    $skk = Skln::findOrFail($id);
+    $skk->delete();
+
+    return redirect('/dashboard/skln')->with('success', 'Data SKLN berhasil dihapus.');
+}
 
 }

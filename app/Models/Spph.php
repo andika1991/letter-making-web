@@ -32,8 +32,5 @@ class Spph extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'haritgl' => 'date',
-        'waktu' => 'datetime:H:i', // Format jam:menit
-    ];
+ 
 }

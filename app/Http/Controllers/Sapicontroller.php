@@ -67,4 +67,13 @@ public function cetak($id)
     return $pdf->stream('Sapi_' . $sapi->nosurat . '.pdf');
 }
 
+
+public function destroy($id)
+{
+    $pik = Sapi::findOrFail($id);
+    $pik->delete();
+
+    return redirect('/dashboard/suratjalansapi')->with('success', 'Data Surat Jalan Sapi berhasil dihapus.');
+}
+
 }

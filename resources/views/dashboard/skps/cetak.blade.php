@@ -9,7 +9,7 @@
             width: 600px;
             font-family: 'Cambria Math', 'Georgia', serif;
             line-height: 1.6;
-            font-size: 16px;
+            font-size: 14px;
         }
         table {
             width: 100%;
@@ -29,11 +29,11 @@
             margin: 5px 0;
         }
         .header-title h1 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: bold;
         }
         .header-title h2 {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: bold;
         }
         .header-title h3 {
@@ -48,6 +48,7 @@
             margin: 10px 0;
         }
         .surat-title {
+            text-decoration: underline;
             font-size: 16px;
             font-weight: bold;
             text-align: center;
@@ -71,18 +72,15 @@
         .content-table td:last-child {
             width: 60%;
         }
-        .signature-table {
-            margin-top: 30px;
+        .signature-section {
             text-align: right;
-        }
-        .signature-table td {
-            padding-top: 10px;
+            margin-top: 30px;
         }
         .signature {
-            margin-top: 40px;
             font-weight: bold;
-            text-decoration: underline;
-            margin-right: 60px;
+            
+            margin-bottom: 10px;
+            padding-left: 80px;
         }
     </style>
 </head>
@@ -90,12 +88,12 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+                <td><img src="dashmin/img/lampung tengah.png'" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
-                        <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
-                        <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                        <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                        <h3>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h3>
+                        <h3>KECAMATAN SEPUTIH BANYAK</h3>
+                        <h1>KAMPUNG SUMBER BAHAGIA</h1>
                         <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                         <p><i>Kode Pos: 34156</i></p>
                     </div>
@@ -106,77 +104,85 @@
     </center>
 
     <p class="surat-title">SURAT KETERANGAN PENDUDUK SEMENTARA</p>
-    <p class="nomor-surat">Nomor: 147.2/148/SK.PS/KP.01/VII/2024</p>
+    <p class="nomor-surat">Nomor: 147.2/{{$skps->nosurat}}/SK.PS/KP.01/VII/2024</p>
 
     <table class="content-table">
         <tr>
             <td colspan="3">
-                Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah:
+                Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah, menerangkan bahwa:
             </td>
         </tr>
         <tr>
-            <td>Nama</td>
+            <td style="padding-left: 50px;">Nama</td>
             <td>:</td>
-            <td>Rachma Nafisa Anggraini</td>
+            <td>{{$skps->nama}}</td>
         </tr>
         <tr>
-            <td>NIK</td>
+            <td style="padding-left: 50px;">NIK</td>
             <td>:</td>
-            <td>360303411080003</td>
+            <td>{{$skps->nik}}</td>
         </tr>
         <tr>
-            <td>Tempat, Tanggal Lahir</td>
+            <td style="padding-left: 50px;">Tempat, Tanggal Lahir</td>
             <td>:</td>
-            <td>Tanggerang, 01-11-2008</td>
+            <td>{{$skps->ttl}}</td>
         </tr>
         <tr>
-            <td>Jenis Kelamin</td>
+            <td style="padding-left: 50px;">Jenis Kelamin</td>
             <td>:</td>
-            <td>Perempuan</td>
+            <td>
+                @if ($skps->jeniskelam == 'L')
+                    Laki-Laki
+                @else
+                    Perempuan
+                @endif
+            </td>
         </tr>
         <tr>
-            <td>Agama</td>
+            <td style="padding-left: 50px;">Agama</td>
             <td>:</td>
-            <td>Islam</td>
+            <td>{{$skps->agama}}</td>
         </tr>
         <tr>
-            <td>Pekerjaan</td>
+            <td style="padding-left: 50px;">Pekerjaan</td>
             <td>:</td>
-            <td>Pelajar/Mahasiswa</td>
+            <td>{{$skps->pekerjaan}}</td>
         </tr>
         <tr>
-            <td>Kewarganegaraan</td>
+            <td style="padding-left: 50px;">Kewarganegaraan</td>
             <td>:</td>
-            <td>Indonesia</td>
+            <td>{{$skps->kewarga}}</td>
         </tr>
         <tr>
-            <td>Alamat</td>
+            <td style="padding-left: 50px;">Alamat</td>
             <td>:</td>
-            <td>Dusun 03 Rt.011 Rw.005 Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah</td>
+            <td>{{$skps->alamat}}</td>
         </tr>
     </table>
 
-    <p>Adalah benar-benar penduduk pada alamat tersebut di atas. Surat Keterangan Penduduk Sementara ini dibuat guna untuk kelengkapan persyaratan pembelian kendaraan roda dua (Sepeda Motor) di dealer Honda Kecamatan Kota Gajah.</p>
+    <p>Adalah benar-benar penduduk sementara yang tinggal pada alamat tersebut di atas. Surat keterangan ini dibuat untuk keperluan {{$skps->tujuan}}.</p>
 
-    <p>Demikian dimohon kepada pihak yang bersangkutan kiranya dapat maklum.</p>
-
-    <table class="signature-table">
-        <tr>
-            <td>Dikeluarkan di:</td>
-            <td>Sumber Bahagia</td>
-        </tr>
-        <tr>
-            <td>Pada Tanggal:</td>
-            <td>10 Juli 2024</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td class="signature">Setio Hudi</td>
-        </tr>
-        <tr>
-            <td></td>
-            <td>Kepala Kampung Sumber Bahagia</td>
-        </tr>
-    </table>
+    <p>Demikian surat ini dibuat, agar dapat digunakan sebagaimana mestinya.</p>
+    <div class="signature-section">
+        <table style="width: 100%;">
+            <tr>
+                <td style="text-align: left; vertical-align: bottom; padding-left: 50px; width: 50%;">
+                    <p ><b>Tanda Tangan YBS</b></p>
+                    <br><br>
+                    <p>{{$skps->nama}}</p>
+                </td>
+                <td style="text-align: right; vertical-align: bottom; padding-right: 50px; width: 50%;">
+                    <p>Dikeluarkan di: Sumber Bahagia</p>
+                    <p>Pada Tanggal: {{ \Carbon\Carbon::parse($skps->created_at)->translatedFormat('d F Y') }}</p>
+                <p > <b>Kepala Kampung Sumber Bahagia</b></p>
+                    <br><br>
+                    <p style="padding-right:70px;">SETIO HUDI</p>
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+    
+    
 </body>
 </html>

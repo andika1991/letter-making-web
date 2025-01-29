@@ -47,9 +47,7 @@
                         <td>{{ $spphs->nama }}</td>
                         <td>{{ date('d M Y', strtotime($spphs->created_at)) }}</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="/dashboard/SPPH/{{ $spphs->id }}">Detail</a>
-                            <a class="btn btn-sm btn-warning" href="/dashboard/SPPH/{{ $spphs->id }}/edit">Edit</a>
-                            <form action="/dashboard/SPPH/{{ $spphs->id }}" method="post" class="d-inline">
+                                <form action="/dashboard/SPPH/{{ $spphs->id }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Klik Oke untuk Menghapus')">Hapus</button>

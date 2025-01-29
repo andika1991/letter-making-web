@@ -36,7 +36,7 @@ class Skbicontroller extends Controller
         'nosurat' => 'required|string|max:255|unique:skbi,nosurat',
         'nama' => 'required|string|max:255',
         'nik' => 'required|string|size:16', // Validasi panjang NIK harus tepat 16 karakter
-        'ttl' => 'required|date', // Format tanggal yang valid
+        'ttl' => 'required', // Format tanggal yang valid
         'jeniskelam' => 'required|in:L,P', // Jenis Kelamin hanya bisa L atau P
         'pekerjaan' => 'nullable|string|max:255',
         'agama' => 'required|string|max:255',

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Sksp extends Model
+class AhliWaris extends Model
 {
     use HasFactory;
 
@@ -14,7 +14,7 @@ class Sksp extends Model
      *
      * @var string
      */
-    protected $table = 'sksp';
+    protected $table = 'ahli_waris';
 
     /**
      * The attributes that are mass assignable.
@@ -22,12 +22,10 @@ class Sksp extends Model
      * @var array
      */
     protected $fillable = [
-        'nosurat',
+        'surat_ahli_waris_id',
         'nama',
-        'nik',
-        'ttl',
-        'agama',
-        'status',
+        'anakke',
+        'umur',
         'alamat',
     ];
 
@@ -36,5 +34,17 @@ class Sksp extends Model
      *
      * @var array
      */
- 
+    protected $casts = [
+        'anakke' => 'integer',
+        'umur' => 'integer',
+        'surat_ahli_waris_id' => 'integer',
+    ];
+
+    /**
+     * Get the related Surat Ahli Waris for this Ahli Waris.
+     */
+    public function suratAhliWaris()
+    {
+        return $this->belongsTo(SuratAhliWaris::class, 'surat_ahli_waris_id');
+    }
 }

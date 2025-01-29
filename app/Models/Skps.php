@@ -33,7 +33,5 @@ class Skps extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'ttl' => 'date', // Tanggal lahir di-cast ke format date
-    ];
+  
 }

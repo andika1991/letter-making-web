@@ -76,7 +76,7 @@
         </tr>
         <tr>
             <td style="padding-left:60px;">Waktu</td>
-            <td>: 09.00-22.00 WIB</td>
+            <td>: {{$spph->waktu}}</td>
         </tr>
         <tr>
             <td style="padding-left:60px;">Tempat</td>
@@ -100,7 +100,8 @@
         <div class="materai">
             <p>Materai 10.000</p>
         </div>
-        <p><strong>SETIO HUDI</strong></p>
+        <br>
+        <p><strong>{{$spph->nama}}</strong></p>
     </div>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-light rounded p-4">
-                <h3 class="mb-4">Tambah Data Surat Keterangan</h3>
+                <h3 class="mb-4">Tambah Data Surat Keterangan KeLuar Negeri</h3>
 
                 <form action="{{ route('skln.store') }}" method="POST">
                     @csrf
@@ -39,8 +39,8 @@
 
                     <!-- Tanggal Lahir -->
                     <div class="mb-3">
-                        <label for="ttl" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
+                        <label for="ttl" class="form-label">Tempat Tanggal Lahir</label>
+                        <input type="text" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
                         @error('ttl')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -70,8 +70,9 @@
 
                     <!-- Kondisi -->
                     <div class="mb-3">
-                        <label for="kondisi" class="form-label">Kondisi</label>
-                        <input type="text" class="form-control @error('kondisi') is-invalid @enderror" id="kondisi" name="kondisi" value="{{ old('kondisi') }}" required>
+                        <label for="kondisi" class="form-label">Kondisi saat ini</label>
+                        <input type="text" class="form-control @error('kondisi') is-invalid @enderror" id="kondisi" name="kondisi" value="{{ old('kondisi') }}"
+                        placeholder="diLuar Negeri (Taiwan) Selama 6 Tahun" required>
                         @error('kondisi')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -79,7 +80,7 @@
 
                     <!-- Tujuan -->
                     <div class="mb-3">
-                        <label for="tujuan" class="form-label">Tujuan</label>
+                        <label for="tujuan" class="form-label">Tujuan pembuatan surat</label>
                         <input type="text" class="form-control @error('tujuan') is-invalid @enderror" id="tujuan" name="tujuan" value="{{ old('tujuan') }}" required>
                         @error('tujuan')
                             <div class="invalid-feedback">{{ $message }}</div>

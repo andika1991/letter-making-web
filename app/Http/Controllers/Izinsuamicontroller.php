@@ -37,7 +37,7 @@ class Izinsuamicontroller extends Controller
         
         // Data Suami
         'namasuami' => 'required|string|max:255',
-        'ttlsuami' => 'required|date',
+        'ttlsuami' => 'required|string',
         'niksuami' => 'required|string|size:16',
         'jeniskelamsuami' => 'required|in:L,P',
         'agamasuami' => 'required|string|max:255',
@@ -46,7 +46,7 @@ class Izinsuamicontroller extends Controller
         
         // Data Istri
         'namaistri' => 'required|string|max:255',
-        'ttlistri' => 'required|date',
+        'ttlistri' => 'required|string',
         'nikistri' => 'required|string|size:16',
         'jeniskelamistri' => 'required|in:L,P',
         'agamaistri' => 'required|string|max:255',
@@ -73,11 +73,19 @@ public function cetak($id)
    
     $pdf = PDF::loadView('dashboard.izinsuami.cetak', [
         'title' => 'Cetak Ket Izin Suami',
-        'izin' => $Izinsuami,
+        'Izinsuami' => $Izinsuami,
     ])->setPaper('a4', 'portrait'); // Paper orientation
 
     // Return the PDF
     return $pdf->stream('Izinsuami_' . $Izinsuami->nosurat . '.pdf');
+}
+   
+public function destroy($id)
+{
+    $pik = Izinsuami::findOrFail($id);
+    $pik->delete();
+
+    return redirect('/dashboard/izinsuami')->with('success', 'Data PIK berhasil dihapus.');
 }
 
 }

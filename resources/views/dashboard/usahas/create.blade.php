@@ -82,14 +82,19 @@
 
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Tulis alamat lengkap disini..."
-                                id="alamat" name="alamat" style="height: 150px;" required>{{ old('alamat') }}</textarea>
+                            <textarea 
+                                class="form-control @error('alamat') is-invalid @enderror" 
+                                id="alamat" 
+                                name="alamat" 
+                                style="height: 150px;" 
+                                required>{{ old('alamat', ' Dusun VI RT.006 RW.002 Kampung Sumber Bahagia') }}</textarea>
                             @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="mb-3">
                             <label for="namaUsaha" class="form-label">Nama Usaha</label>
                             <input type="text" class="form-control @error('namaUsaha') is-invalid @enderror" id="namaUsaha" name="namaUsaha" placeholder="Nama Usaha" required value="{{ old('namaUsaha') }}">
@@ -110,14 +115,19 @@
                         </div>
                         <div class="mb-3">
                             <label for="alamatUsaha" class="form-label">Alamat Usaha</label>
-                            <textarea class="form-control @error('alamatUsaha') is-invalid @enderror" placeholder="Tulis alamat usaha lengkap disini..."
-                                id="alamatUsaha" name="alamatUsaha" style="height: 150px;" required>{{ old('alamatUsaha') }}</textarea>
+                            <textarea 
+                                class="form-control @error('alamatUsaha') is-invalid @enderror" 
+                                id="alamatUsaha" 
+                                name="alamatUsaha" 
+                                style="height: 150px;" 
+                                required>{{ old('alamatUsaha', 'Dusun VI RT.006 RW.002 Kampung Sumber Bahagia') }}</textarea>
                             @error('alamatUsaha')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="mb-3">
                             <label for="mulaiBerdiri" class="form-label">Mulai Berdiri usaha</label>
                             <input type="date" class="form-control @error('mulaiBerdiri') is-invalid @enderror" id="mulaiBerdiri" name="mulaiBerdiri" required value="{{ old('mulaiBerdiri') }}">

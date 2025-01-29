@@ -65,10 +65,10 @@
                         <div class="mb-3">
                             <label class="form-label">Jenis Kelamin</label>
                             <div>
-                                <input type="radio" id="laki-laki" name="jenisKelamin" value="Laki-Laki" {{ old('jenisKelamin') == 'Laki-Laki' ? 'checked' : '' }}> <label for="laki-laki">Laki-Laki</label>
-                                <input type="radio" id="perempuan" name="jenisKelamin" value="Perempuan" {{ old('jenisKelamin') == 'Perempuan' ? 'checked' : '' }}> <label for="perempuan">Perempuan</label>
+                                <input type="radio" id="laki-laki" name="jeniskelamin" value="Laki-Laki" {{ old('jeniskelamin') == 'Laki-Laki' ? 'checked' : '' }}> <label for="laki-laki">Laki-Laki</label>
+                                <input type="radio" id="perempuan" name="jeniskelamin" value="Perempuan" {{ old('jeniskelamin') == 'Perempuan' ? 'checked' : '' }}> <label for="perempuan">Perempuan</label>
                             </div>
-                            @error('jenisKelamin')
+                            @error('jeniskelamin')
                                 <div class="invalid-feedback d-block">
                                     {{ $message }}
                                 </div>
@@ -106,19 +106,24 @@
 
                         <div class="mb-3">
                             <label for="alamat" class="form-label">Alamat</label>
-                            <textarea class="form-control @error('alamat') is-invalid @enderror" placeholder="Tulis alamat lengkap disini..." id="alamat" name="alamat" style="height: 150px;" required>{{ old('alamat') }}</textarea>
+                            <textarea 
+                                class="form-control @error('alamat') is-invalid @enderror" 
+                                id="alamat" 
+                                name="alamat" 
+                                style="height: 150px;" 
+                                required>{{ old('alamat', 'Dusun 06 RT.021 RW.002 Kamp. Sumber Bahagia Kec. Seputih Banyak Kab. Lampung Tengah') }}</textarea>
                             @error('alamat')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
-
+                        
                         <!-- Textarea for Alamat KK -->
                         <div class="mb-3">
-                            <label for="alamatKK" class="form-label">Alamat KK</label>
-                            <textarea class="form-control @error('alamatKK') is-invalid @enderror" placeholder="Tulis alamat sesuai Kartu Keluarga disini..." id="alamatKK" name="alamatKK" style="height: 150px;" required>{{ old('alamatKK') }}</textarea>
-                            @error('alamatKK')
+                            <label for="alamatkk" class="form-label">Alamat KK</label>
+                            <textarea class="form-control @error('alamatkk') is-invalid @enderror" placeholder="Tulis alamat sesuai Kartu Keluarga disini..." id="alamatkk" name="alamatkk" style="height: 150px;" required>{{ old('alamatkk') }}</textarea>
+                            @error('alamatkk')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
@@ -126,17 +131,23 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="keterangan" class="form-label">Keterangan</label>
-                            <input id="keterangan" type="hidden" name="keterangan">
-                            <trix-editor class="form-control @error('keterangan') is-invalid @enderror" input="keterangan" required>{{ old('keterangan') }}</trix-editor>
+                            <label for="keterangan" class="form-label">Tujuan</label>
+                            <input id="keterangan" type="hidden" name="keterangan" value="{{ old('keterangan') }}">
+                            <trix-editor 
+                                class="form-control @error('keterangan') is-invalid @enderror" 
+                                input="keterangan" 
+                                placeholder="kelengkapan persyaratan mendaftar di Sekolah Dasar (SD)" 
+                                required>
+                            </trix-editor>
                             @error('keterangan')
                                 <div class="invalid-feedback">
                                     {{ $message }}
                                 </div>
                             @enderror
                         </div>
+                        
                         <div class="mb-3 mt-3">
-                            <label for="tglSurat" class="form-label">Tanggal</label>
+                            <label for="tglSurat" class="form-label">Tanggal Surat</label>
                             <input type="date" class="form-control @error('tglSurat') is-invalid @enderror" id="tglSurat" name="tglSurat" required value="{{ old('tglSurat') }}">
                             @error('tglSurat')
                                 <div class="invalid-feedback">

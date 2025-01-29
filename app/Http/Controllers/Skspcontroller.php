@@ -35,7 +35,7 @@ class Skspcontroller extends Controller
         'nosurat' => 'required|string|max:50|unique:sksp,nosurat',
         'nama' => 'required|string|max:100',
         'nik' => 'required|string|max:20|unique:sksp,nik',
-        'ttl' => 'required|date',
+        'ttl' => 'required',
         'agama' => 'required|string|max:50',
         'status' => 'required|string|max:50',
         'alamat' => 'required|string',
@@ -60,6 +60,13 @@ public function cetak($id)
 
     // Return the PDF
     return $pdf->stream('SKSP' . $sksp->nosurat . '.pdf');
+}
+public function destroy($id)
+{
+    $skk = Sksp::findOrFail($id);
+    $skk->delete();
+
+    return redirect('/dashboard/sksp')->with('success', 'Data SKSP berhasil dihapus.');
 }
 
 }

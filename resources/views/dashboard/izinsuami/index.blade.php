@@ -47,8 +47,7 @@
                             <td>{{ $iz->namasuami }}</td>
                             <td>{{ date('d M Y', strtotime($iz->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/izinsuami/{{ $iz->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/izinsuami/{{ $iz->nosurat }}/edit">Edit</a>
+                              
                                 <form action="/dashboard/izinsuami/{{ $iz->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

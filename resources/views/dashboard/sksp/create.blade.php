@@ -35,8 +35,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="ttl" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
+                        <label for="ttl" class="form-label">Tempat Tanggal Lahir</label>
+                        <input type="text" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
                         @error('ttl')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

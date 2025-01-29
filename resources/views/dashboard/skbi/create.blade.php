@@ -19,6 +19,7 @@
                         @enderror
                     </div>
 
+                    <P><b>Data yang salah</b></P>
                     <!-- Nama -->
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
@@ -39,8 +40,8 @@
 
                     <!-- Tanggal Lahir -->
                     <div class="mb-3">
-                        <label for="ttl" class="form-label">Tanggal Lahir</label>
-                        <input type="date" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
+                        <label for="ttl" class="form-label">Tempat Tanggal Lahir</label>
+                        <input type="text" class="form-control @error('ttl') is-invalid @enderror" id="ttl" name="ttl" value="{{ old('ttl') }}" required>
                         @error('ttl')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -85,10 +86,10 @@
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    <P><b>Data yang benar</b></P>
                     <!-- Nama Anggota -->
                     <div class="mb-3">
-                        <label for="nama_anggota" class="form-label">Nama Anggota</label>
+                        <label for="nama_anggota" class="form-label">Nama Yang Benar</label>
                         <input type="text" class="form-control @error('nama_anggota') is-invalid @enderror" id="nama_anggota" name="nama_anggota" value="{{ old('nama_anggota') }}" required>
                         @error('nama_anggota')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -97,7 +98,7 @@
 
                     <!-- Nomor Kartu Identitas -->
                     <div class="mb-3">
-                        <label for="nohkms" class="form-label">Nomor Kartu Identitas</label>
+                        <label for="nohkms" class="form-label">NIK</label>
                         <input type="text" class="form-control @error('nohkms') is-invalid @enderror" id="nohkms" name="nohkms" value="{{ old('nohkms') }}" required>
                         @error('nohkms')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -106,7 +107,7 @@
 
                     <!-- Jenis Kelamin Anggota -->
                     <div class="mb-3">
-                        <label for="jeniskelamin_anggota" class="form-label">Jenis Kelamin Anggota</label>
+                        <label for="jeniskelamin_anggota" class="form-label">Jenis Kelamin </label>
                         <select class="form-control @error('jeniskelamin_anggota') is-invalid @enderror" id="jeniskelamin_anggota" name="jeniskelamin_anggota" required>
                             <option value="">-- Pilih Jenis Kelamin --</option>
                             <option value="L" {{ old('jeniskelamin_anggota') == 'L' ? 'selected' : '' }}>Laki-laki</option>
@@ -119,7 +120,7 @@
 
                     <!-- Alamat Anggota -->
                     <div class="mb-3">
-                        <label for="alamat_anggota" class="form-label">Alamat Anggota</label>
+                        <label for="alamat_anggota" class="form-label">Alamat </label>
                         <textarea class="form-control @error('alamat_anggota') is-invalid @enderror" id="alamat_anggota" name="alamat_anggota" rows="3" required>{{ old('alamat_anggota') }}</textarea>
                         @error('alamat_anggota')
                             <div class="invalid-feedback">{{ $message }}</div>

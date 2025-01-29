@@ -28,11 +28,11 @@
             margin: 3px 0;
         }
         .header-title h1 {
-            font-size: 16px;
+            font-size: 20px;
             font-weight: bold;
         }
         .header-title h2 {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: bold;
         }
         .header-title h3 {
@@ -82,12 +82,12 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+                <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
-                        <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
+                        <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                         <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                        <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                        <h1>KAMPUNG SUMBER BAHAGIA</h1>
                         <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                         <p><i>Kode Pos: 34156</i></p>
                     </div>
@@ -99,7 +99,7 @@
         </table>
     </center>
 
-    <h2 class="surat-title">SURAT KETERANGAN KEMATIAN</h2>
+    <h2 class="surat-title"><u>SURAT KETERANGAN KEMATIAN</u></h2>
     <p class="nomor-surat">Nomor: 140/{{$skk->nosurat}}/SKK/KP.01/X/2025</p>
 
     <p>Yang bertanda tangan di bawah ini, Kepala Kampung Sumber Bahagia, dengan ini menerangkan bahwa:</p>
@@ -164,7 +164,8 @@
         </tr>
         <tr>
             <td style="padding-left:30px;">Waktu</td>
-            <td>: {{$skk->waktu}} WIB</td>
+            <td>: {{ \Carbon\Carbon::parse($skk->waktu)->format('H.i') }} WIB</td>
+
         </tr>
         <tr>
             <td style="padding-left:30px;">Tempat Kematian</td>
@@ -185,7 +186,7 @@
     <table class="signature-table">
         <tr>
             <td>
-                <p>Sumber Bahagia, {{ \Carbon\Carbon::parse($skk->createdat)->format('d F Y') }}</p>
+                <p>Sumber Bahagia, {{ \Carbon\Carbon::parse($skk->created_at)->translatedFormat('d F Y') }}</p>
                 <p>Kepala Kampung Sumber Bahagia</p>
                 <br><br>
                 <div class="signature">SETIO HUDI</div>

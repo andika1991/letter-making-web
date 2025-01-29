@@ -79,7 +79,7 @@ class Pikcontroller extends Controller
         $pik = Pik::findOrFail($id);
         $pik->delete();
 
-        return redirect('/dashboard/permohonankeramaian')->with('success', 'Data SPPH berhasil dihapus.');
+        return redirect('/dashboard/permohonankeramaian')->with('success', 'Data PIK berhasil dihapus.');
     }
    
 }

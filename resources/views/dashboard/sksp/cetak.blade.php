@@ -73,12 +73,12 @@
             text-align: center;
         }
         .header-title h1 {
-            font-size: 14px; /* Kurangi ukuran font judul */
+            font-size: 18px; /* Kurangi ukuran font judul */
             margin: 0;
             font-weight: bold;
         }
         .header-title h2 {
-            font-size: 13px;
+            font-size: 15px;
             margin: 2px 0;
             font-weight: bold;
         }
@@ -95,12 +95,12 @@
 <body>
     <table class="header-table">
         <tr>
-            <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+            <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
             <td>
                 <div class="header-title">
-                    <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
+                    <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                     <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                    <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                    <h1>KAMPUNG SUMBER BAHAGIA</h1>
                     <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                     <p><i>Kode Pos: 34156</i></p>
                 </div>
@@ -123,43 +123,48 @@
     <table class="content-table">
         <tr>
             <td>Nama</td>
-            <td>: SITI KHOTIJAH</td>
+<td>: {{$sksp->nama}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1807095603010001</td>
+            <td>: {{$sksp->nik}}</td>
         </tr>
         <tr>
             <td>Tempat/Tgl Lahir</td>
-            <td>: Seputih Banyak, 16-03-2001</td>
+            <td>: {{$sksp->ttl}}</td>
         </tr>
         <tr>
             <td>Agama</td>
-            <td>: Islam</td>
+            <td>: {{$sksp->agama}}</td>
         </tr>
         <tr>
             <td>Status Perkawinan</td>
-            <td>: CERAI HIDUP</td>
+            <td>: {{$sksp->status}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun IV RT.014 RW.006 Sumber Bahagia, Kecamatan Seputih Banyak, Kabupaten Lampung Tengah</td>
+            <td>: {{$sksp->alamat}}</td>
         </tr>
     </table>
 
-    <p>Bahwa tersebut di atas benar-benar penduduk Kampung Sumber Bahagia dengan status <b>CERAI HIDUP</b> dan belum menikah lagi.</p>
+    <p>Bahwa tersebut di atas benar-benar penduduk Kampung Sumber Bahagia dengan status <b>{{ $sksp->status }}</b> 
+        @if($sksp->status == 'CERAI HIDUP' || $sksp->status == 'CERAI MATI')
+            dan belum menikah lagi.
+        @endif
+    </p>
+    
 
     <p>Demikian surat keterangan ini dibuat dengan sebenarnya untuk dapat dipergunakan sebagaimana mestinya.</p>
 
     <table class="signature-table">
         <tr>
-            <td>Sumber Bahagia, 07 November 2025</td>
+            <td>Sumber Bahagia,{{ \Carbon\Carbon::parse($sksp->created_at)->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
-            <td>KEPALA KAMPUNG SUMBER BAHAGIA</td>
+            <td>Kepala Kampung Sumber Bahagia</td>
         </tr>
         <tr>
-            <td><br><br><br><b>SETIO HUDI</b></td>
+            <td style="padding-right: 70px;"><br><br><br><b>SETIO HUDI</b></td>
         </tr>
     </table>
 </body>

@@ -57,12 +57,12 @@ class DashboardDomController extends Controller
              'tempatTglLahir' => 'required|max:255',
              'pekerjaan' => 'required|max:255',
              'alamat' => 'required|max:255',
-             'alamatKK' => 'required|max:255', // Validasi alamat KK
+             'alamatkk' => 'required|max:255', // Validasi alamat KK
              'keterangan' => 'required|max:255',
              'tglSurat' => 'required|date',
              'ttd' => 'required|max:255',
              'namaTtd' => 'required|max:255',
-             'jenisKelamin' => 'required|in:Laki-Laki,Perempuan', // Validasi jenisKelamin
+             'jeniskelamin' => 'required|in:Laki-Laki,Perempuan', // Validasi jenisKelamin
              'agama' => 'required|in:Islam,Kristen,Katolik,Hindu,Buddha,Konghucu', // Validasi agama
          ]);
      

@@ -8,7 +8,7 @@
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                     <i class="fa fa-chart-bar fa-3x text-primary"></i>
                     <div class="ms-3">
-                        <p class="mb-2">Total Surat Keterangan Status Pernikahan</p>
+                        <p class="mb-2">Total Surat Keterangan Penduduk Sementara</p>
                         <h6 class="mb-0">{{ $totalSkps }}</h6>
                     </div>
                 </div>
@@ -47,8 +47,6 @@
                             <td>{{ $skpss->nama }}</td>
                             <td>{{ date('d M Y', strtotime($skpss->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/skps/{{ $skpss->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/skps/{{ $skpss->nosurat }}/edit">Edit</a>
                                 <form action="/dashboard/skps/{{ $skpss->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

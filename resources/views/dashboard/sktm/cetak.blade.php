@@ -72,7 +72,7 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+                <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
                         <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
@@ -199,7 +199,7 @@
             <tr>
                 <td style="padding-left:310px;text-decoration: underline; text-decoration-color: black;"><u>Pada Tanggal</u></td>
                 <td>:</td>
-                <td style="text-decoration: underline; text-decoration-color: black;"><u>{{ \Carbon\Carbon::parse($sktm->createdat)->format('d-F-Y') }}
+                <td style="text-decoration: underline; text-decoration-color: black;"><u>{{ \Carbon\Carbon::parse($sktm->created_at)->translatedFormat('d F Y') }}
                 </u></td>
 
             </tr>

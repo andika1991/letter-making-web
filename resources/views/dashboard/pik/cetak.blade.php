@@ -25,7 +25,7 @@
             text-align: center;
         }
         .header-title h1 {
-            font-size: 14px; /* Kurangi ukuran font judul */
+            font-size: 17px; /* Kurangi ukuran font judul */
             margin: 0;
             font-weight: bold;
         }
@@ -64,12 +64,12 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+                <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
-                        <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
+                        <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                         <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                        <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                        <h1>KAMPUNG SUMBER BAHAGIA</h1>
                         <p>Alamat: Jalan Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</p>
                         <p>Kode Pos: 34156</p>
                     </div>

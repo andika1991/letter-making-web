@@ -47,8 +47,7 @@
                             <td>{{ $skbis->nama }}</td>
                             <td>{{ date('d M Y', strtotime($skbis->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/skbi/{{ $skbis->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/skbi/{{ $skbis->nosurat }}/edit">Edit</a>
+
                                 <form action="/dashboard/skbi/{{ $skbis->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

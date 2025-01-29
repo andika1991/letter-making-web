@@ -37,7 +37,5 @@ class Skln extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'ttl' => 'date',
-    ];
+   
 }

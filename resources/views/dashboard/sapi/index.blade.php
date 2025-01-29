@@ -47,8 +47,7 @@
                             <td>{{ $sapis->nama }}</td>
                             <td>{{ date('d M Y', strtotime($sapis->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/suratjalansapi/{{ $sapis->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/suratjalansapi/{{ $sapis->nosurat }}/edit">Edit</a>
+                               
                                 <form action="/dashboard/suratjalansapi/{{ $sapis->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

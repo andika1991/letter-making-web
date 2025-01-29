@@ -12,7 +12,7 @@ class Domisili extends Model
     // Using $fillable instead of $guarded for mass-assignment protection
     protected $fillable = [
         'kodeSurat', 'noSurat', 'nama', 'nik', 'tempatTglLahir', 'pekerjaan', 'alamat', 
-        'alamatKK', 'keterangan', 'tglSurat', 'ttd', 'namaTtd', 'jenisKelamin', 'agama'
+        'alamatkk', 'keterangan', 'tglSurat', 'ttd', 'namaTtd', 'jeniskelamin', 'agama'
     ];
 
     // Use 'noSurat' as the route key for the model instead of the default 'id'

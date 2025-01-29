@@ -5,7 +5,7 @@
     <div class="row g-4">
         <div class="col-12">
             <div class="bg-light rounded p-4">
-                <h3 class="mb-4">Tambah Data Surat Kematian</h3>
+                <h3 class="mb-4">Tambah Data Surat PIK</h3>
 
                 <form action="{{ route('permohonankeramaian.store') }}" method="POST">
                     @csrf
@@ -52,10 +52,10 @@
 
                     <div class="mb-3">
                         <label for="jenis_kelamin" class="form-label">Jenis Kelamin</label>
-                        <select class="form-control @error('jeniskelam') is-invalid @enderror" id="jeniskelam" name="jeniskelam" required>
+                        <select class="form-control @error('jenis_kelamin') is-invalid @enderror" id="jenis_kelamin" name="jenis_kelamin" required>
                             <option value="">-- Pilih Jenis Kelamin --</option>
-                            <option value="Laki-laki" {{ old('jeniskelam') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
-                            <option value="Perempuan" {{ old('jeniskelam') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
+                            <option value="Laki-laki" {{ old('jenis_kelamin') == 'Laki-laki' ? 'selected' : '' }}>Laki-laki</option>
+                            <option value="Perempuan" {{ old('jenis_kelamin') == 'Perempuan' ? 'selected' : '' }}>Perempuan</option>
                         </select>
                         @error('jenis_kelamin')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -84,7 +84,7 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="alamat" class="form-label">Alamat</label>
+                        <label for="alamat" class="form-label">Alamat Tempat Tinggal</label>
                         <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
                         @error('alamat')
                             <div class="invalid-feedback">{{ $message }}</div>
@@ -117,19 +117,37 @@
 
                     <div class="mb-3">
                         <label for="waktuac" class="form-label">Waktu Acara</label>
-                        <input type="time" class="form-control @error('waktuac') is-invalid @enderror" id="waktuac" name="waktuac" value="{{ old('waktuac') }}" required>
+                        <input type="text" 
+                               class="form-control @error('waktuac') is-invalid @enderror" 
+                               id="waktuac" 
+                               name="waktuac" 
+                               value="{{ old('waktuac') }}" 
+                               placeholder="09.00 sd 21.00" 
+                               required>
                         @error('waktuac')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    
 
                     <div class="mb-3">
                         <label for="acaraac" class="form-label">Nama Acara</label>
-                        <input type="text" class="form-control @error('acaraac') is-invalid @enderror" id="acaraac" name="acaraac" value="{{ old('acaraac') }}" required>
+                        <select class="form-control @error('acaraac') is-invalid @enderror" id="acaraac" name="acaraac" required>
+                            <option value="" disabled selected>Pilih Nama Acara</option>
+                            <option value="Resepsi Pernikahan" {{ old('acaraac') == 'Resepsi Pernikahan' ? 'selected' : '' }}>Resepsi Pernikahan</option>
+                            <option value="Resepsi Khitanan" {{ old('acaraac') == 'Resepsi Khitanan' ? 'selected' : '' }}>Resepsi Khitanan</option>
+                            <option value="Ulang Tahun" {{ old('acaraac') == 'Ulang Tahun' ? 'selected' : '' }}>Ulang Tahun</option>
+                            <option value="Acara Kantor" {{ old('acaraac') == 'Acara Kantor' ? 'selected' : '' }}>Acara Kantor</option>
+                            <option value="Pengajian" {{ old('acaraac') == 'Pengajian' ? 'selected' : '' }}>Pengajian</option>
+                            <option value="Workshop" {{ old('acaraac') == 'Workshop' ? 'selected' : '' }}>Workshop</option>
+                            <option value="Seminar" {{ old('acaraac') == 'Seminar' ? 'selected' : '' }}>Seminar</option>
+                            <option value="Tasyakuran" {{ old('acaraac') == 'Tasyakuran' ? 'selected' : '' }}>Tasyakuran</option>
+                        </select>
                         @error('acaraac')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    
 
                     <div class="mb-3">
                         <label for="alamatac" class="form-label">Alamat Acara</label>

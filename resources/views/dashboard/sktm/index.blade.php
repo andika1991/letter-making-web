@@ -47,9 +47,7 @@
                         <td>{{ $sktm->nama }}</td>
                         <td>{{ date('d M Y', strtotime($sktm->created_at)) }}</td>
                         <td>
-                            <a class="btn btn-sm btn-primary" href="/dashboard/sktm/{{ $sktm->id }}">Detail</a>
-                            <a class="btn btn-sm btn-warning" href="/dashboard/sktm/{{ $sktm->id }}/edit">Edit</a>
-                            <form action="/dashboard/sktm/{{ $sktm->id }}" method="post" class="d-inline">
+                        <form action="/dashboard/sktm/{{ $sktm->id }}" method="post" class="d-inline">
                                 @method('delete')
                                 @csrf
                                 <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Klik Oke untuk Menghapus')">Hapus</button>

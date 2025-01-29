@@ -47,8 +47,7 @@
                             <td>{{ $skks->nama }}</td>
                             <td>{{ date('d M Y', strtotime($skks->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/kematian/{{ $skks->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/kematian/{{ $skks->nosurat }}/edit">Edit</a>
+
                                 <form action="/dashboard/kematian/{{ $skks->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

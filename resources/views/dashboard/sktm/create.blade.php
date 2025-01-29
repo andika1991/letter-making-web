@@ -56,19 +56,29 @@
 
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat</label>
-                        <textarea class="form-control @error('alamat') is-invalid @enderror" id="alamat" name="alamat" rows="3" required>{{ old('alamat') }}</textarea>
+                        <textarea 
+                            class="form-control @error('alamat') is-invalid @enderror" 
+                            id="alamat" 
+                            name="alamat" 
+                            rows="3" 
+                            required>{{ old('alamat', 'Dusun IV RT.016 RW.006 Kampung Sumber Bahagia Kec. Seputih Banyak Kab. Lampung Tengah') }}</textarea>
                         @error('alamat')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
-
+                    
                     <div class="mb-3">
-                        <label for="alamat2" class="form-label">Alamat Tambahan</label>
-                        <textarea class="form-control @error('alamat2') is-invalid @enderror" id="alamat2" name="alamat2" rows="3">{{ old('alamat2') }}</textarea>
+                        <label for="alamat2" class="form-label">Alamat Tambahan 'Isikan sama dengan alamat'</label>
+                        <textarea 
+                            class="form-control @error('alamat2') is-invalid @enderror" 
+                            id="alamat2" 
+                            name="alamat2" 
+                            rows="3">{{ old('alamat2', 'Dusun IV RT.016 RW.006 Kampung Sumber Bahagia Kec. Seputih Banyak Kab. Lampung Tengah') }}</textarea>
                         @error('alamat2')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
+                    
 
                     <div class="mb-3">
                         <label for="tujuan" class="form-label">Tujuan</label>

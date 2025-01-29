@@ -9,7 +9,7 @@
 
                 <form action="{{ route('hajat.store') }}" method="POST">
                     @csrf
-
+<p><b>Data Pribadi</b></p>
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama Lengkap</label>
                         <input type="text" class="form-control @error('nama') is-invalid @enderror" id="nama" name="nama" value="{{ old('nama') }}" required>
@@ -51,16 +51,18 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="nomor" class="form-label">Nomor</label>
+                        <label for="nomor" class="form-label">Nomor Surat</label>
                         <input type="text" class="form-control @error('nomor') is-invalid @enderror" id="nomor" name="nomor" value="{{ old('nomor') }}" required>
                         @error('nomor')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
                     </div>
 
+                    <p><b>Data Acara</b></p>
+
                     <div class="mb-3">
                         <label for="dalamrangka" class="form-label">Dalam Rangka</label>
-                        <input type="text" class="form-control @error('dalamrangka') is-invalid @enderror" id="dalamrangka" name="dalamrangka" value="{{ old('dalamrangka') }}" required>
+                        <input type="text" class="form-control @error('dalamrangka') is-invalid @enderror" id="dalamrangka" name="dalamrangka" value="{{ old('dalamrangka') }}" placeholder="Tasyakuran/Pernikahan/Khitanaan" required>
                         @error('dalamrangka')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -68,7 +70,7 @@
 
                     <div class="mb-3">
                         <label for="denganhiburan" class="form-label">Dengan Hiburan</label>
-                        <input type="text" class="form-control @error('denganhiburan') is-invalid @enderror" id="denganhiburan" name="denganhiburan" value="{{ old('denganhiburan') }}" required>
+                        <input type="text" class="form-control @error('denganhiburan') is-invalid @enderror" id="denganhiburan" name="denganhiburan" value="{{ old('denganhiburan') }}" placeholder="Andika Music">
                         @error('denganhiburan')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

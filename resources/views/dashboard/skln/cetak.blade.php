@@ -86,7 +86,7 @@
     <center>
         <table class="header-table">
             <tr>
-                <td><img src="path/to/logo.png" alt="Logo" /></td>
+                <td><img  style="width: 80px;heigh:110px;"   src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
                         <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
@@ -107,7 +107,7 @@
         SURAT KETERANGAN KELUAR NEGERI
     </div>
     <div class="nomor-surat">
-        Nomor: 147.2/269/SK/KP.01/XI/2024
+        Nomor: 147.2/{{$skln->nosurat}}/SK/KP.01/XI/2024
     </div>
 
     <p>Yang bertanda tangan di bawah ini Kepala Kampung Sumber Bahagia:</p>
@@ -130,31 +130,31 @@
     <table class="content-table">
         <tr>
             <td>Nama</td>
-            <td>: NENENG MULYA SARI</td>
+            <td>: {{$skln->nama}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1802145505970002</td>
+            <td>: {{$skln->nik}}</td>
         </tr>
         <tr>
             <td>Tempat, Tgl. Lahir</td>
-            <td>: Argo Mulyo, 15-05-1997</td>
+            <td>: {{$skln->ttl}}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td>: Perempuan</td>
+            <td>: {{$skln->jeniskelam}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun III RT.013 RW.005 Kampung Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</td>
+            <td>: {{$skln->alamat}}</td>
         </tr>
     </table>
 
-    <p>Bahwa tersebut di atas benar-benar penduduk Kampung Sumber Bahagia yang saat ini bekerja di luar negeri (Taiwan) selama 6 tahun. Menurut pengetahuan kami, hingga surat ini dikeluarkan, yang bersangkutan masih bekerja di luar negeri.</p>
+    <p>Bahwa tersebut di atas benar-benar penduduk Kampung Sumber Bahagia yang saat ini <b><i>Bekerja: {{$skln->kondisi}}</i></b>. Menurut pengetahuan kami, hingga surat ini dikeluarkan, yang bersangkutan masih bekerja di luar negeri.</p>
 
-    <p>Demikian surat keterangan ini dibuat guna keperluan mengajukan kredit di BANK BRI Cabang Seputih Banyak.</p>
+    <p>Demikian surat keterangan ini dibuat guna keperluan {{$skln->kondisi}}.</p>
 
-    <table class="content-table">
+    <table >
         <tr>
             <td style="padding-left:310px;">Dikeluarkan di</td>
             <td>:</td>
@@ -163,7 +163,7 @@
         <tr>
             <td style="padding-left:310px;text-decoration: underline;">Pada Tanggal</td>
             <td>:</td>
-            <td style="text-decoration: underline;">22 Januari 2024</td>
+            <td style="text-decoration: underline;">{{ \Carbon\Carbon::parse($skln->created_at)->translatedFormat('d F Y') }}</td>
         </tr>
     </table>
 

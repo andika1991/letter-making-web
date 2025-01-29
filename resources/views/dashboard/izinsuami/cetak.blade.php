@@ -30,10 +30,10 @@
             font-weight: bold;
         }
         .header-title h1 {
-            font-size: 16px; /* Ukuran font lebih kecil */
+            font-size: 18px; /* Ukuran font lebih kecil */
         }
         .header-title h2 {
-            font-size: 14px;
+            font-size: 15px;
         }
         .header-title h3 {
             font-size: 12px;
@@ -54,20 +54,21 @@
         }
         .nomor-surat {
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             margin-bottom: 15px;
         }
         .content-table td {
             vertical-align: top;
             padding: 2px 0;
-            font-size: 12px; /* Ukuran font isi lebih kecil */
+            font-size: 13px; /* Ukuran font isi lebih kecil */
         }
         .content-table td:first-child {
             width: 30%; /* Rasio kolom pertama lebih kecil */
         }
         .text-right {
             text-align: right;
+            margin-right: 100px;
         }
         .signature-table {
             width: 100%;
@@ -84,12 +85,12 @@
 <body>
     <table class="header-table">
         <tr>
-            <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+            <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
             <td>
                 <div class="header-title">
-                    <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
+                    <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                     <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                    <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                    <h1>KAMPUNG SUMBER BAHAGIA</h1>
                     <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                     <p>Kode Pos: 34156</p>
                 </div>
@@ -101,7 +102,7 @@
     </table>
 
     <div class="surat-title">SURAT KETERANGAN IZIN SUAMI</div>
-    <div class="nomor-surat">Nomor: 140.2/123/Kp.01/XI/2024</div>
+    <div class="nomor-surat">Nomor: 140.2/{{$Izinsuami->nosurat}}/Kp.01/XI/2024</div>
 
     <p>Yang bertanda tangan di bawah ini Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak, menerangkan:</p>
 
@@ -111,31 +112,31 @@
         </tr>
         <tr>
             <td>Nama</td>
-            <td>: IWAN PANAMI</td>
+            <td>: {{$Izinsuami->namasuami}}</td>
         </tr>
         <tr>
             <td>Tempat/Tgl Lahir</td>
-            <td>: Sumber Bahagia, 12-04-1983</td>
+            <td>: {{$Izinsuami->ttlsuami}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1802101204830003</td>
+            <td>: {{$Izinsuami->niksuami}}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
-            <td>: Laki-laki</td>
+            <td>: Perempuan</td>
         </tr>
         <tr>
             <td>Agama</td>
-            <td>: Islam</td>
+            <td>: {{$Izinsuami->agamasuami}}</td>
         </tr>
         <tr>
             <td>Pekerjaan</td>
-            <td>: Wiraswasta</td>
+            <td>: {{$Izinsuami->pekerjaansuami}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun 01 RT.002 RW.001 Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</td>
+            <td>:{{$Izinsuami->alamat}}</td>
         </tr>
     </table>
 
@@ -147,15 +148,15 @@
         </tr>
         <tr>
             <td>Nama</td>
-            <td>: NUR A’IDA</td>
+            <td>: {{$Izinsuami->namaistri}}</td>
         </tr>
         <tr>
             <td>Tempat/Tgl Lahir</td>
-            <td>: Seputih Banyak, 02-11-1986</td>
+            <td>: {{$Izinsuami->ttlsuami}}</td>
         </tr>
         <tr>
             <td>NIK</td>
-            <td>: 1802104211860005</td>
+            <td>: {{$Izinsuami->niksuami}}</td>
         </tr>
         <tr>
             <td>Jenis Kelamin</td>
@@ -163,24 +164,24 @@
         </tr>
         <tr>
             <td>Agama</td>
-            <td>: Islam</td>
+            <td>: {{$Izinsuami->agamaistri}}</td>
         </tr>
         <tr>
             <td>Pekerjaan</td>
-            <td>: Mengurus Rumah Tangga</td>
+            <td>: {{$Izinsuami->pekerjaanistri}}</td>
         </tr>
         <tr>
             <td>Alamat</td>
-            <td>: Dusun 01 RT.002 RW.001 Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</td>
+            <td>:  {{$Izinsuami->alamatistri}}</td>
         </tr>
     </table>
 
-    <p>Pada saat ini nama tersebut di atas benar-benar telah mendapatkan izin dari SUAMI untuk bekerja menjadi TKI ke luar negeri dengan persyaratan dan ketentuan yang telah ditetapkan.</p>
+    <p>Pada saat ini nama tersebut di atas benar-benar telah mendapatkan izin dari SUAMI {{$Izinsuami->tujuan}} dengan persyaratan dan ketentuan yang telah ditetapkan.</p>
     <p>Demikian Surat Izin ini kami buat untuk dapat dipergunakan sebagaimana mestinya.</p>
 
     <table class="content-table">
         <tr>
-            <td class="text-right">Sumber Bahagia, 14 November 2024</td>
+            <td class="text-right">Sumber Bahagia, {{ \Carbon\Carbon::parse($Izinsuami->createdat)->format('d-F-Y') }}</td>
         </tr>
     </table>
 
@@ -194,12 +195,13 @@
             <td></td>
         </tr>
         <tr>
-            <td><u>NUR A’IDA</u><br>Istri</td>
-            <td><u>IWAN PANAMI</u><br>Suami</td>
+            <td><u>{{$Izinsuami->namaistri}}</u><br>Istri</td>
+            <td><u>{{$Izinsuami->namasuami}}</u><br>Suami</td>
         </tr>
         <tr>
             <td colspan="2"><br>Kepala Kampung Sumber Bahagia</td>
         </tr>
+        <br><br><br>
         <tr>
             <td colspan="2"><br><u>SETIO HUDI</u></td>
         </tr>

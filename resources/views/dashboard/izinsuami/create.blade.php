@@ -30,7 +30,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="ttlsuami" class="form-label">Tanggal Lahir Suami</label>
-                        <input type="date" class="form-control @error('ttlsuami') is-invalid @enderror" id="ttlsuami" name="ttlsuami" value="{{ old('ttlsuami') }}" required>
+                        <input type="text" class="form-control @error('ttlsuami') is-invalid @enderror" id="ttlsuami" name="ttlsuami" value="{{ old('ttlsuami') }}" required>
                         @error('ttlsuami')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -86,7 +86,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="ttlistri" class="form-label">Tanggal Lahir Istri</label>
-                        <input type="date" class="form-control @error('ttlistri') is-invalid @enderror" id="ttlistri" name="ttlistri" value="{{ old('ttlistri') }}" required>
+                        <input type="text" class="form-control @error('ttlistri') is-invalid @enderror" id="ttlistri" name="ttlistri" value="{{ old('ttlistri') }}" required>
                         @error('ttlistri')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -134,7 +134,7 @@
                     <!-- Tujuan -->
                     <div class="mb-3">
                         <label for="tujuan" class="form-label">Tujuan Surat</label>
-                        <input type="text" class="form-control @error('tujuan') is-invalid @enderror" id="tujuan" name="tujuan" value="{{ old('tujuan') }}" required>
+                        <input type="text" class="form-control @error('tujuan') is-invalid @enderror" id="tujuan" name="tujuan" value="{{ old('tujuan') }}" placeholder="Untuk bekerja sebagai TKI di Taiwan" required>
                         @error('tujuan')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

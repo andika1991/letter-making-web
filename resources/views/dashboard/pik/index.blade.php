@@ -47,8 +47,7 @@
                             <td>{{ $pk->nama }}</td>
                             <td>{{ date('d M Y', strtotime($pk->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/permohonankeramaian/{{ $pk->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/permohonankeramaian/{{ $pk->nosurat }}/edit">Edit</a>
+                               
                                 <form action="/dashboard/permohonankeramaian/{{ $pk->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 

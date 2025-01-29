@@ -6,11 +6,11 @@
     <title>Surat Pernyataan</title>
     <style>
         body {
-        font-family: "Times New Roman", serif;
-        margin: 8mm;
-        font-size: 12px;
-        line-height: 1.4;
-    }
+            font-family: "Times New Roman", serif;
+            margin: 8 mm;
+            font-size: 12px;
+            line-height: 1.4;
+        }
 
         h3 {
             font-size: 16px;
@@ -18,46 +18,61 @@
             text-align: center;
             margin-bottom: 10px;
         }
+
         table {
             width: 100%;
             margin-bottom: 10px;
             border-collapse: collapse;
         }
+
         td {
             padding: 2px;
             border: none;
             vertical-align: top;
         }
+
         td:first-child {
             width: 30%;
         }
+
         table tr {
             line-height: 1.2;
         }
+
         ol {
             margin-left: 18px;
         }
+
         .text-center {
             text-align: center;
         }
+
+        .signature-row {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .signature {
+            text-align: center;
+            width: 45%;
+        }
+
         .mt-4 {
-            margin-top: 10px; /* Jarak lebih kecil */
+            margin-top: 10px;
         }
+
         .mb-3 {
-            margin-bottom: 5px; /* Jarak lebih kecil */
+            margin-bottom: 5px;
         }
-        .table th, .table td {
-            text-align: left;
-        }
-        .signature-section table {
-            margin-top: 10px; /* Mengurangi jarak antar elemen tanda tangan */
-        }
+
         @media print {
             body {
                 margin: 5mm;
                 font-size: 12px;
                 line-height: 1.4;
             }
+
             h3 {
                 font-size: 14px;
             }
@@ -66,10 +81,10 @@
 </head>
 <body>
 
-    <h3 class="text-center text-decoration-underline mb-4">SURAT PERNYATAAN</h3>
+    <h3 class="text-center">SURAT PERNYATAAN</h3>
 
     <p>Yang bertanda tangan di bawah ini:</p>
-    <table class="table">
+    <table>
         <tr>
             <td>Nama</td>
             <td>: {{$hajat->nama}}</td>
@@ -93,21 +108,18 @@
     </table>
 
     <p>Sehubungan dengan permohonan tentang izin keramaian kepada Kapolsek Seputih Banyak:</p>
-    <table class="table">
+    <table>
         <tr>
             <td>Nomor</td>
             <td>: 147.2/{{$hajat->nomor}}/Kp.01/I/2025</td>
         </tr>
-        
+        <tr>
             <td>Tanggal</td>
-            <td>
-                : {{
-                    \Carbon\Carbon::parse(
-                        \App\Models\Pik::where('nosurat', $hajat->nomor)->value('created_at')
-                    )->translatedFormat(' d F Y') ?? '-'
-                }}
-            </td>
-                
+            <td>: {{
+                \Carbon\Carbon::parse(
+                    \App\Models\Pik::where('nosurat', $hajat->nomor)->value('created_at')
+                )->translatedFormat('d F Y') ?? '-'
+            }}</td>
         </tr>
         <tr>
             <td>Dalam Rangka</td>
@@ -120,11 +132,10 @@
     </table>
 
     <p>Yang akan dilaksanakan pada:</p>
-    <table class="table">
+    <table>
         <tr>
             <td>Hari / Tanggal</td>
             <td>: {{ \Carbon\Carbon::parse($hajat->haritgl)->translatedFormat('l, d F Y') }}</td>
-
         </tr>
         <tr>
             <td>Waktu</td>
@@ -148,13 +159,29 @@
 
     <p>Demikian Surat Pernyataan ini saya buat dengan sebenarnya dalam keadaan sehat jasmani dan rohani dan tanpa paksaan dari pihak manapun.</p>
 
-        <p style="text-align: right; ">Sumber Bahagia, 02 Januari 2025</p>
-        <p style="text-align: right;" >Yang membuat pernyataan</p>
-        <div style="text-align: right;" class="mb-3">Materai 10.000</div>
-        <p style="text-align: right;"><strong>PAIMIN</strong></p>
+    <div class="signature-section text-center">
+        <table style="width: 100%; text-align: center;">
+            <tr>
+                <td style="padding-bottom: 10px;">
+                    <p>Kepala Kampung Sumber Bahagia</p>
+                    <div class="mb-3"></div>
+                    <br><br>
+                    <p><strong>SETIO HUDI</strong></p>
+                </td>
+                <td style="padding-bottom: 10px;">
+                    <p>Sumber Bahagia, {{ \Carbon\Carbon::parse($hajat->created_at)->translatedFormat('d F Y') }}</p>
+                    <p>Yang membuat pernyataan</p>
+                    <div class="mb-3">Materai 10.000</div>
+                    
+                    <p><strong>{{$hajat->nama}}</strong></p>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    <div class="signature-section" style="text-align: center;">
+    
+    
+    
+    <div class="signature-section text-center">
         <p>Mengetahui:</p>
         <table style="width: 100%; text-align: center;">
             <tr>
@@ -162,11 +189,10 @@
                 <td>Danramil Seputih Banyak</td>
                 <td>Kapolsek Seputih Banyak</td>
             </tr>
-            
             <tr>
-                <td style="padding-top: 40px;">__________________________</td>
-                <td style="padding-top: 40px;">__________________________</td>
-                <td style="padding-top: 40px;">__________________________</td>
+                <td style="padding-top: 60px;">__________________________</td>
+                <td style="padding-top: 60px;">__________________________</td>
+                <td style="padding-top: 60px;">__________________________</td>
             </tr>
         </table>
     </div>

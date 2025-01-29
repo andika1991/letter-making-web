@@ -29,8 +29,8 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="ttlsuami" class="form-label">Tanggal Lahir Suami</label>
-                        <input type="date" class="form-control @error('ttlsuami') is-invalid @enderror" id="ttlsuami" name="ttlsuami" value="{{ old('ttlsuami') }}" required>
+                        <label for="ttlsuami" class="form-label">Tempat /Tanggal Lahir Suami</label>
+                        <input type="text" class="form-control @error('ttlsuami') is-invalid @enderror" id="ttlsuami" name="ttlsuami" value="{{ old('ttlsuami') }}" required>
                         @error('ttlsuami')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror
@@ -85,8 +85,8 @@
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="ttlistri" class="form-label">Tanggal Lahir Istri</label>
-                        <input type="date" class="form-control @error('ttlistri') is-invalid @enderror" id="ttlistri" name="ttlistri" value="{{ old('ttlistri') }}" required>
+                        <label for="ttlistri" class="form-label">Tempat / Tanggal Lahir Istri</label>
+                        <input type="text" class="form-control @error('ttlistri') is-invalid @enderror" id="ttlistri" name="ttlistri" value="{{ old('ttlistri') }}" required>
                         @error('ttlistri')
                             <div class="invalid-feedback">{{ $message }}</div>
                         @enderror

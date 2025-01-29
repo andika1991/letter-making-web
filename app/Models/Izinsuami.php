@@ -45,8 +45,5 @@ class Izinsuami extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'ttlsuami' => 'date', // Format tanggal untuk kolom tanggal lahir suami
-        'ttlistri' => 'date', // Format tanggal untuk kolom tanggal lahir istri
-    ];
+ 
 }

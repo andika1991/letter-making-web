@@ -40,9 +40,5 @@ class Telahmenikah extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'ttlsuami' => 'date', // Tanggal lahir suami di-cast ke format date
-        'ttlistri' => 'date', // Tanggal lahir istri di-cast ke format date
-        'tahunmenikah' => 'integer', // Tahun menikah di-cast ke integer
-    ];
+ 
 }

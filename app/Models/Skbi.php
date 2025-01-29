@@ -41,7 +41,5 @@ class Skbi extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'ttl' => 'date',
-    ];
+   
 }

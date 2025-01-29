@@ -35,7 +35,7 @@ class Skpscontroller extends Controller
         'nosurat' => 'required|string|max:255|unique:skps,nosurat',
         'nama' => 'required|string|max:255',
         'nik' => 'required|string|size:16', // Validasi panjang NIK harus tepat 16 karakter
-        'ttl' => 'required|date', // Format tanggal yang valid
+        'ttl' => 'required', // Format tanggal yang valid
         'jeniskelam' => 'required|in:L,P', // Jenis Kelamin hanya bisa L atau P
         'agama' => 'required|string|max:255',
         'pekerjaan' => 'nullable|string|max:255', // Opsional
@@ -64,5 +64,13 @@ public function cetak($id)
 
     // Return the PDF
     return $pdf->stream('SKPS' . $skps->nosurat . '.pdf');
+}
+
+public function destroy($id)
+{
+    $skk = Skps::findOrFail($id);
+    $skk->delete();
+
+    return redirect('/dashboard/skps')->with('success', 'Data SKPS berhasil dihapus.');
 }
 }

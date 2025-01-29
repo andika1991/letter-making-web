@@ -105,12 +105,12 @@
 <body>
     <table class="header-table">
         <tr>
-            <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
+            <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
             <td>
                 <div class="header-title">
-                    <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
-                    <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                    <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                    <h3>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h3>
+                    <h3>KECAMATAN SEPUTIH BANYAK</h3>
+                    <h1>KAMPUNG SUMBER BAHAGIA</h1>
                     <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
                     <p>Kode Pos: 34156</p>
                 </div>
@@ -201,13 +201,14 @@
 
     <table class="signature-table">
         <tr>
-            <td>Sumber Bahagia, {{ \Carbon\Carbon::parse($sapi->tanggal)->translatedFormat('d F Y') }}</td>
+            <td>Sumber Bahagia, {{ \Carbon\Carbon::parse($sapi->created_at)->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
             <td>Kepala Kampung Sumber Bahagia</td>
         </tr>
+        <br>
         <tr>
-            <td style="padding-top: 50px;"><strong>SETIO HUDI</strong></td>
+            <td style="padding-top: 50px;padding-right:70px;"><strong>SETIO HUDI</strong></td>
         </tr>
     </table>
 </body>

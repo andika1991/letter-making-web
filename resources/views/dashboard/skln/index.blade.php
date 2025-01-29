@@ -47,8 +47,6 @@
                             <td>{{ $sklns->nama }}</td>
                             <td>{{ date('d M Y', strtotime($sklns->created_at)); }}</td>
                             <td>
-                                <a class="btn btn-sm btn-primary" href="/dashboard/skln/{{ $sklns->nosurat }}">Detail</a>
-                                <a class="btn btn-sm btn-warning" href="/dashboard/skln/{{ $sklns->nosurat }}/edit">Edit</a>
                                 <form action="/dashboard/skln/{{ $sklns->id }}" method="post" class="d-inline">
                                     @method('delete')
                                     @csrf 
