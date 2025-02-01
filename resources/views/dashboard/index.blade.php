@@ -3,19 +3,37 @@
 @section('container')
 <!-- Sale & Revenue Start -->
 <div class="container-fluid pt-4 px-4">
-    <div class="row g-4">
-        <div class="col-sm-6 col-xl-5">
+    <div class="row g-4 pb-3 justify-content-evenly">
+        <div class="col-sm-6 col-xl-6">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-address-card fa-3x text-primary"></i>
+                <i class="fa fa-house-chimney fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Keterangan Domisili</p>
                     <h6 class="mb-0">{{ $totalDomisili }}</h6>
                 </div>
             </div>
         </div>
+        <div class="col-sm-6 col-xl-6">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-person-circle-xmark fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Surat Keterangan Beda Identitas</p>
+                    <h6 class="mb-0">{{ $totalSkbi }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-6">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-house-circle-exclamation fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Surat Keterangan Penduduk Sementara</p>
+                    <h6 class="mb-0">{{ $totalSkps }}</h6>
+                </div>
+            </div>
+        </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-briefcase fa-3x text-primary"></i>
+                <i class="fa fa-store fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Keterangan Usaha</p>
                     <h6 class="mb-0">{{ $totalUsaha }}</h6>
@@ -24,7 +42,7 @@
         </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-heart-broken fa-3x text-primary"></i>
+                <i class="fa fa-address-card fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Keterangan Tidak Mampu</p>
                     <h6 class="mb-0">{{ $totalSktm }}</h6>
@@ -33,19 +51,19 @@
         </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-calendar-check fa-3x text-primary"></i>
+                <i class="fa fa-book-skull fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Total Surat Permohonan Izin Keramaian</p>
-                    <h6 class="mb-0">{{ $totalPik }}</h6>
+                    <p class="mb-2">Total Surat Keterangan Kematian</p>
+                    <h6 class="mb-0">{{ $totalKematian }}</h6>
                 </div>
             </div>
         </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-skull-crossbones fa-3x text-primary"></i>
+                <i class="fa fa-users fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Total Surat Keterangan Kematian</p>
-                    <h6 class="mb-0">{{ $totalKematian }}</h6>
+                    <p class="mb-2">Total Surat Keterangan Ahli Waris</p>
+                    <h6 class="mb-0">{{ $totalAhliWaris }}</h6>
                 </div>
             </div>
         </div>
@@ -78,24 +96,6 @@
         </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-id-card fa-3x text-primary"></i>
-                <div class="ms-3">
-                    <p class="mb-2">Total Surat Keterangan Beda Identitas</p>
-                    <h6 class="mb-0">{{ $totalSkbi }}</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-5">
-            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-users fa-3x text-primary"></i>
-                <div class="ms-3">
-                    <p class="mb-2">Total Surat Keterangan Penduduk Sementara</p>
-                    <h6 class="mb-0">{{ $totalSkps }}</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-5">
-            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                 <i class="fa fa-heart fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Keterangan Telah Menikah</p>
@@ -105,25 +105,44 @@
         </div>
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-male fa-3x text-primary"></i>
+                <i class="fa fa-music fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Surat Pernyataan Pemilik Hiburan</p>
+                    <h6 class="mb-0">{{ $totalSpph}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-5">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-music fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Surat Pernyataan Hajat</p>
+                    <h6 class="mb-0">{{ $totalHajat }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-5">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-volume-high fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Total Surat Permohonan Izin Keramaian</p>
+                    <h6 class="mb-0">{{ $totalPik }}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-xl-5">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-envelope fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Izin Suami</p>
                     <h6 class="mb-0">{{ $totalIzinSuami }}</h6>
                 </div>
             </div>
         </div>
+        
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-users fa-3x text-primary"></i>
-                <div class="ms-3">
-                    <p class="mb-2">Total Surat Ahli Waris</p>
-                    <h6 class="mb-0">{{ $totalAhliWaris }}</h6>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-6 col-xl-5">
-            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-child fa-3x text-primary"></i>
+                <i class="fa fa-envelope fa-3x text-primary"></i>
                 <div class="ms-3">
                     <p class="mb-2">Total Surat Izin Orang Tua</p>
                     <h6 class="mb-0">{{ $totalIzinOrtu }}</h6>
@@ -235,6 +254,64 @@
                             <td>{{ $sktms->nosurat }}</td>
                             <td>{{ $sktms->nama }}</td>
                             <td>{{ date('d M Y', strtotime($sktms->created_at)); }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Daftar Surat Keterangan Pemilik Hiburan</h6>
+                <a href="/dashboard/sktm">Lihat Semua</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">No Surat</th>
+                            <th scope="col">Nama Warga</th>
+                            <th scope="col">Tanggal Surat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($spph as $spphs)
+                        <tr>
+                            <td>{{ $spphs->id }}</td>
+                            <td>{{ $spphs->nama }}</td>
+                            <td>{{ date('d M Y', strtotime($spphs->created_at)); }}</td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid pt-4 px-4">
+        <div class="bg-light text-center rounded p-4">
+            <div class="d-flex align-items-center justify-content-between mb-4">
+                <h6 class="mb-0">Daftar Surat Keterangan Hajat</h6>
+                <a href="/dashboard/sktm">Lihat Semua</a>
+            </div>
+            <div class="table-responsive">
+                <table class="table text-start align-middle table-bordered table-hover mb-0">
+                    <thead>
+                        <tr class="text-dark">
+                            <th scope="col">No Surat</th>
+                            <th scope="col">Nama Warga</th>
+                            <th scope="col">Tanggal Surat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach ($hajat as $hajats)
+                        <tr>
+                            <td>{{ $hajats->id }}</td>
+                            <td>{{ $hajats->nama }}</td>
+                            <td>{{ date('d M Y', strtotime($hajats->created_at)); }}</td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -490,7 +567,6 @@
     </div>
 
 
-
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
@@ -520,7 +596,6 @@
         </div>
     </div>
 
-
     <div class="container-fluid pt-4 px-4">
         <div class="bg-light text-center rounded p-4">
             <div class="d-flex align-items-center justify-content-between mb-4">
@@ -549,9 +624,4 @@
             </div>
         </div>
     </div>
-
-
-    
-
-
 @endsection

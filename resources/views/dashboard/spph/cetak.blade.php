@@ -21,6 +21,7 @@
         }
         .signature {
             margin-top: 20px;
+            margin-left: 300px;
             text-align: center;
         }
         .signature p {
@@ -95,7 +96,7 @@
 
     <p>Demikian Surat Pernyataan ini saya buat dengan sebenarnya dalam keadaan sehat jasmani dan rohani dan tanpa paksaan dari pihak manapun.</p>
     <div class="signature">
-        <p>Sumber Bahagia, 02 Januari 2025</p>
+        <p>Sumber Bahagia, {{ \Carbon\Carbon::parse($spph->created_at)->translatedFormat('d F Y') }}</p>
         <p>Yang membuat pernyataan</p>
         <div class="materai">
             <p>Materai 10.000</p>

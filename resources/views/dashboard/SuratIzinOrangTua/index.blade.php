@@ -6,9 +6,9 @@
     <div class="row g-4">
         <div class="col-sm-6 col-xl-5">
             <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                <i class="fa fa-chart-line fa-3x text-primary"></i>
+                <i class="fa fa-envelope fa-3x text-primary"></i>
                 <div class="ms-3">
-                    <p class="mb-2">Total Surat Izin Orang Tua</p>
+                    <p class="mb-2">Total Surat Permohonan Izin Orang Tua</p>
                     <h6 class="mb-0">{{ $totalSuratIzinOrtu }}</h6>
                 </div>
             </div>
@@ -27,7 +27,7 @@
             </div>
         @endif
         <div class="d-flex align-items-center justify-content-between mb-4">
-            <h6 class="mb-0">Daftar Surat Izin Orang Tua</h6>
+            <h6 class="mb-0">Daftar Surat Permohonan Izin Orang Tua</h6>
             <a href="/dashboard/suratIzinOrtu/create" class="btn btn-primary">Tambah Surat Izin</a>
         </div>
         <div class="table-responsive">

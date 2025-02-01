@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <title>Surat Keterangan Usaha</title>
     <style>
@@ -7,38 +7,44 @@
             margin: 0 auto;
             width: 600px;
             font-family: 'Cambria Math', 'Georgia';
+            line-height: 1.4;
+            font-size: 14px;
         }
         table {
             width: 100%;
             margin-bottom: 5px;
+            border-spacing: 0;
         }
         .header-table {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .header-table img {
-            width: 90px;
-            height: 90px;
+            padding-left: 15px;
+            width: 75px;
+            height: 100px;
         }
         .header-title {
             text-align: center;
         }
         .header-title h1 {
-            font-size: 18px;
-            margin: 5px 0;
+            font-size: 20px;
+            margin: 2px 0px;
             font-weight: bold;
         }
         .header-title h2 {
-            font-size: 16px;
-            margin: 5px 0;
+            font-size: 18px;
+            margin: 2px 0px;
             font-weight: bold;
         }
         .header-title h3 {
             font-size: 14px;
-            margin: 5px 0;
+            margin: 2px 0px;
+            font-weight: bold;
         }
         .header-title p {
             margin: 2px 0;
             font-size: 12px;
+            font-weight: bold;
         }
         .content-table {
             margin-top: 10px;
@@ -76,11 +82,11 @@
                 <td><img src="{{ asset('dashmin/img/lampung tengah.png') }}" alt="Logo" /></td>
                 <td>
                     <div class="header-title">
-                        <h1>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h1>
+                        <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                         <h2>KECAMATAN SEPUTIH BANYAK</h2>
-                        <h3>KAMPUNG SUMBER BAHAGIA</h3>
+                        <h1>KAMPUNG SUMBER BAHAGIA</h1>
                         <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
-                        <i>Kode Pos: 34156</i>
+                        <p><i>Kode Pos: 34156</i></p>
                     </div>
                 </td>
             </tr>

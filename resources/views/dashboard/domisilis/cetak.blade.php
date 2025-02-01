@@ -6,75 +6,70 @@
         body {
             margin: 0 auto;
             width: 600px;
-            font-family: 'Cambria Math', 'Georgia', serif;
+            font-family: 'Cambria Math', 'Georgia';
             line-height: 1.4;
             font-size: 14px;
         }
         table {
             width: 100%;
-            margin-bottom: 10px;
+            margin-bottom: 5px;
             border-spacing: 0;
         }
         .header-table {
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
         .header-table img {
-            width: 80px;
-            height: 110px;
+            padding-left: 15px;
+            width: 75px;
+            height: 100px;
         }
         .header-title {
             text-align: center;
         }
-        .header-title h1, .header-title h2, .header-title h3 {
-            margin: 0;
-            font-weight: bold;
-        }
         .header-title h1 {
-            font-size: 19px;
+            font-size: 20px;
+            margin: 2px 0px;
+            font-weight: bold;
         }
         .header-title h2 {
-            font-size: 15px;
+            font-size: 18px;
+            margin: 2px 0px;
+            font-weight: bold;
         }
         .header-title h3 {
-            font-size: 13px;
+            font-size: 14px;
+            margin: 2px 0px;
+            font-weight: bold;
         }
         .header-title p {
-            margin: 5px 0;
-            font-size: 11px;
-        }
-        hr {
-            border: 1px solid black;
-            margin: 10px 0;
-        }
-        .surat-title {
-            text-align: center;
-            font-size: 15px;
+            margin: 2px 0;
+            font-size: 12px;
             font-weight: bold;
-            text-decoration: underline;
-            margin: 15px 0;
-        }
-        .nomor-surat {
-            text-align: center;
-            font-size: 13px;
-            margin-bottom: 15px;
         }
         .content-table {
-            width: 100%;
-            margin-top: 15px;
+            margin-top: 10px;
         }
         .content-table td {
             vertical-align: top;
-            padding: 5px 0;
-        }
-        .content-table td:first-child {
-            width: 35%;
+            padding: 2px 0;
         }
         .signature-table {
-            margin-top: 25px;
+            margin-top: 20px;
             text-align: right;
         }
         .signature-table td {
-            padding-top: 20px;
+            padding-top: 10px;
+        }
+        /* Apply Cambria Math font to the specific elements */
+        .surat-title {
+            font-family: 'Cambria Math', serif;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .nomor-surat {
+            font-family: 'Cambria Math', serif;
+            font-size: 14px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -88,18 +83,18 @@
                         <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
                         <h2>KECAMATAN SEPUTIH BANYAK</h2>
                         <h1>KAMPUNG SUMBER BAHAGIA</h1>
-                        <p>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</p>
-                        <p>Kode Pos: 34156</p>
+                        <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
+                        <p><i>Kode Pos: 34156</i></p>
                     </div>
                 </td>
             </tr>
             <tr>
-                <td colspan="2"><hr /></td>
+                <td colspan="2"><hr style="border: 1px solid black" /></td>
             </tr>
         </table>
+        <div class="surat-title"><u>SURAT KETERANGAN DOMISILI</u></div>
+        <div class="nomor-surat">No: 147.2/ {{$domisili->noSurat}} / KP.01 / VI /2025</div>
     </center>
-    <div class="surat-title">SURAT KETERANGAN DOMISILI</div>
-    <div class="nomor-surat">No: 147.2/ {{$domisili->noSurat}} / KP.01 / VI /2025</div>
     <p>Yang bertandatangan di bawah ini Kepala Kampung Sumber Bahagia Kecamatan Seputih Banyak Kabupaten Lampung Tengah menerangkan bahwa:</p>
     <table class="content-table">
         <tr>
@@ -170,18 +165,17 @@
         ?>
         
     </table>
-    <p>Menerangkan bahwa yang tersebut di atas, adalah benar-benar Warga kami dan berdomisili di Kampung Sumber Bahagia  {{$dusun}} RT.{{$rt}} RW.{{$rw}} Kecamatan Seputih Banyak Kabupaten Lampung Tengah. Surat Keterangan ini dibuat sebagai {{ strip_tags($domisili->keterangan) }}
-        .</p>
+    <p class="text-justify">Menerangkan bahwa yang tersebut di atas, adalah benar-benar Warga kami dan berdomisili di Kampung Sumber Bahagia  {{$dusun}} RT.{{$rt}} RW.{{$rw}} Kecamatan Seputih Banyak Kabupaten Lampung Tengah. Surat Keterangan ini dibuat sebagai {{ strip_tags($domisili->keterangan) }}</p>
     <p>Demikian Surat Keterangan ini dibuat dengan sebenarnya dan dapat dipergunakan sebagaimana mestinya.</p>
     <table class="signature-table">
         <tr>
             <td>Sumber Bahagia, {{ \Carbon\Carbon::parse($domisili->created_at)->translatedFormat('d F Y') }}</td>
         </tr>
         <tr>
-            <td>Kepala Kampung Sumber Bahagia</td>
+            <td style="padding-top: 0px;" >Kepala Kampung Sumber Bahagia</td>
         </tr>
         <tr>
-            <td style="padding-top: 50px; font-weight: bold;padding-right:60px;">SETIO HUDI</td>
+            <td style="padding-top: 60px; font-weight: bold;padding-right:60px;">SETIO HUDI</td>
         </tr>
     </table>
 </body>

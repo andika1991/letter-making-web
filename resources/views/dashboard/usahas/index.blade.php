@@ -6,8 +6,8 @@
         <div class="row g-4">
             <div class="col-sm-6 col-xl-5">
                 <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
-                    <i class="fa fa-chart-bar fa-3x text-primary"></i>
-                    <div class="ms-3">
+                    <i class="fa fa-store fa-3x ms-3 text-primary"></i>
+                    <div class="ms-1">
                         <p class="mb-2">Total Surat Keterangan Usaha</p>
                         <h6 class="mb-0">{{ $totalUsaha }}</h6>
                     </div>
@@ -53,7 +53,7 @@
                                     @csrf 
                                     <button class="btn btn-sm btn-danger border-0" onclick="return confirm('Kilik Oke Untuk Menghapus')">Hapus</button>
                                 </form>
-                                <a class="btn btn-sm btn-success" href="/dashboard/usaha/{{ $usaha->noSurat }}/cetak">Cetak</a>
+                                <a class="btn btn-sm btn-success" href="/dashboard/usaha/{{ $usaha->noSurat }}/cetak" target="_blank">Cetak</a>
                             </td>
                         </tr>
                         @endforeach

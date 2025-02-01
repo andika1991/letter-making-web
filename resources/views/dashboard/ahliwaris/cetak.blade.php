@@ -4,60 +4,50 @@
     <title>Surat Kuasa Ahli Waris</title>
     <style>
         body {
-            margin: 10px auto;
-            width: 680px;
-            font-family: 'Times New Roman', serif;
+            margin: 0 auto;
+            width: 600px;
+            font-family: 'Cambria Math', 'Georgia';
+            line-height: 1.4;
             font-size: 14px;
-            line-height: 1.5;
         }
         table {
             width: 100%;
+            margin-bottom: 5px;
             border-spacing: 0;
-            margin-bottom: 8px;
         }
         .header-table {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-        .header-table td {
-            vertical-align: top;
+            margin-bottom: 10px;
         }
         .header-table img {
-            width: 100px;
+            padding-left: 15px;
+            width: 75px;
             height: 100px;
         }
         .header-title {
             text-align: center;
         }
-        .header-title h3 {
-            margin: 2px 0;
-            font-size: 16px;
+        .header-title h1 {
+            font-size: 20px;
+            margin: 2px 0px;
             font-weight: bold;
         }
         .header-title h2 {
-            margin: 2px 0;
-            font-size: 20px;
+            font-size: 18px;
+            margin: 2px 0px;
+            font-weight: bold;
+        }
+        .header-title h3 {
+            font-size: 14px;
+            margin: 2px 0px;
             font-weight: bold;
         }
         .header-title p {
-            margin: 1px 0;
+            margin: 2px 0;
             font-size: 12px;
-        }
-        hr {
-            border: 1px solid black;
-            margin: 10px 0;
-        }
-        .surat-title {
-            text-align: center;
-            font-size: 14px;
             font-weight: bold;
-            text-decoration: underline;
-            margin-bottom: 10px;
         }
-        .nomor-surat {
-            text-align: center;
-            font-size: 12px;
-            margin-bottom: 15px;
+        .content-table {
+            margin-top: 10px;
         }
         .content-table td {
             vertical-align: top;
@@ -109,11 +99,11 @@
         <tr>
             <td><img src="dashmin/img/lampung tengah.png" alt="Logo" /></td>
             <td class="header-title">
-                <h3>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h3>
-                <h3>KECAMATAN SEPUTIH BANYAK</h3>
-                <h2>KAMPUNG SUMBER BAHAGIA</h2>
-                <p>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</p>
-                <p>Kode Pos: 34156</p>
+                <h2>PEMERINTAH KABUPATEN LAMPUNG TENGAH</h2>
+                <h2>KECAMATAN SEPUTIH BANYAK</h2>
+                <h1>KAMPUNG SUMBER BAHAGIA</h1>
+                <p><i>Alamat: Jl. Simpang Lima Sumber Bahagia, Kec. Seputih Banyak, Kab. Lampung Tengah</i></p>
+                <p><i>Kode Pos: 34156</i></p>
             </td>
         </tr>
     </table>
